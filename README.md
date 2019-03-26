@@ -1,5 +1,11 @@
 # README
 
+Test username: username, password: password
+user, 12345678
+
+
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
