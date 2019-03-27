@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route } from 'react-router-dom'
-import Welcome from './welcome/welcome_container'
+import Welcome from './welcome/welcome'
 import Signup from './credentials/signup_container'
 import Login from './credentials/login_container'
 import { AuthRoute } from '../util/route_util.js'

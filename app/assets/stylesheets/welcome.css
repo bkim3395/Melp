@@ -1,0 +1,45 @@
+.welcome-header{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-width: 1020px;
+    padding-top: 30px;
+    height: 570px;
+    background: url(https://i.imgur.com/7nhcMrY.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.credentials{
+    display: flex;
+    justify-content: flex-end;
+}
+
+.credentials-container{
+    display: flex;
+    width: 200px;
+    justify-content: space-around;
+    align-items: center;
+    padding-right: 40px;
+}
+
+.credentials-container a{
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.credentials-container a:last-child{
+    padding: 7px;
+    border: 2px solid white;
+    border-radius: 7px;
+}
+
+.site-logo{
+    padding-top: 100px;
+    text-align: center;
+    font-size: 50px;
+    font-weight: bold;
+    color: red;
+}

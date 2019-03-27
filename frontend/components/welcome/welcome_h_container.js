@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
-import Welcome from './welcome';
+import WelcomeHeader from './welcome_header';
 
 const msp = (state) => {
     return {
@@ -14,4 +14,4 @@ const mdp = (dispatch) => {
     }
 };
 
-export default connect(msp, mdp)(Welcome);
+export default connect(msp, mdp)(WelcomeHeader);
