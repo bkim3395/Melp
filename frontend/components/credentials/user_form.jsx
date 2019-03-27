@@ -70,7 +70,7 @@ class SessionForm extends React.Component {
                     </ul>
             </div>
             <div className="form-image">
-                    <img src="https://i.imgur.com/7liIv50.png"></img>
+                    <img src={window.signFormURL}></img>
             </div>
            </div>
            </>

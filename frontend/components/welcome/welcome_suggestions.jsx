@@ -7,15 +7,15 @@ export default (props) => {
         <h2 className="suggestion-title">Pick your Cuisine!</h2>
         <div className="cuisine-list">
             <div className="cuisine">
-                <img src="https://i.imgur.com/tvoJxda.jpg"></img>
+                <img src={window.koreaURL}></img>
                 <div>Korean Food</div>
             </div>
             <div className="cuisine">
-                <img src="https://i.imgur.com/vxJJACS.jpg"></img>
+                <img src={window.japanURL}></img>
                 <div>Japanese Food</div>
             </div>
             <div className="cuisine">
-                <img src="https://i.imgur.com/VjNpruw.jpg"></img>
+                <img src={window.chinaURL}></img>
                 <div>Chinese Food</div>
             </div>
         </div>  

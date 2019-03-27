@@ -30,6 +30,8 @@ class User < ApplicationRecord
     foreign_key: :author_id,
     class_name: :Review
 
+    has_one_attached :photos
+
     def ensure_session_token
         self.session_token ||= User.generate_session_token
     end

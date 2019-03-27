@@ -27,6 +27,8 @@ class Business < ApplicationRecord
     foreign_key: :business_id,
     class_name: :Review
 
+    has_one_attached :photos
+
 
 
 end

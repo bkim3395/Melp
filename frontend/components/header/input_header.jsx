@@ -5,7 +5,7 @@ export default (props) => {
 
     return(
         <div className="input-header">
-            <Link to="/"><img src="https://i.imgur.com/S6PlXFq.png"></img>
+            <Link to="/"><img src={window.logoURL}></img>
             </Link>
         </div>
     );

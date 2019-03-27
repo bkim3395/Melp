@@ -29,7 +29,7 @@
  }
 
  .github-link::before{
-     content: url(https://i.imgur.com/Lykc2xz.png);
+     content: image-url('github-logo.png');
      position: relative;
      padding-right: 10px;
      bottom: -10px;
@@ -38,7 +38,7 @@
  .footer-image{
      width: 800px;
      height: 150px;
-     background: url(https://i.imgur.com/6yv34JW.png);
+     background: image-url('footer-image.png');
      background-size: cover;
      margin-top: 15px;
  }

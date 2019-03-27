@@ -67,7 +67,3 @@
 .sign-form-buttons input[type="submit"]:hover{
     filter: brightness(150%);
 }
-
-/* .sign-form-buttons button:last-child{
-    margin-left: 1px;
-} */
