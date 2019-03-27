@@ -21,9 +21,16 @@ export const receiveErrors = (errors) => ({
 
 export const login = (user) => (dispatch) => {
     return API_S.login(user).then((user) => {
-        dispatch(receiveCurrentUser(user));
+        dispatch(receiveCurrentUser(user))}, 
+        (errors) => {
+                debugger;
+                dispatch({
+                    type: RECEIVE_ERRORS,
+                    errors: errors.responseJSON,
+                     })
     });
 };
+
 
 export const logout = () => (dispatch) => {
     return API_S.logout().then(() => {
@@ -33,7 +40,12 @@ export const logout = () => (dispatch) => {
 
 export const signup = (user) => (dispatch) => {
     return API_S.signup(user).then((user) => {
-        dispatch(receiveCurrentUser(user));
+        dispatch(receiveCurrentUser(user));}, 
+        (errors) => {
+            dispatch({
+                    type: RECEIVE_ERRORS,
+                    errors: errors.responseJSON,
+                    })
     });
 };
 
