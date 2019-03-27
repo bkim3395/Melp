@@ -23,7 +23,6 @@ export const login = (user) => (dispatch) => {
     return API_S.login(user).then((user) => {
         dispatch(receiveCurrentUser(user))}, 
         (errors) => {
-                debugger;
                 dispatch({
                     type: RECEIVE_ERRORS,
                     errors: errors.responseJSON,

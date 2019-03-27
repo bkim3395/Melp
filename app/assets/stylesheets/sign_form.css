@@ -1,0 +1,25 @@
+.sign-form-whole{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 40px 15%;
+}
+
+.sign-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.sign-form ul{
+    padding: 0;
+}
+
+.authForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 15px;
+}
+

@@ -1,0 +1,11 @@
+.input-header{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    background-color: #D32323;
+}
+
+.input-header img{
+    width: 100px;
+    height: 64px;
+}

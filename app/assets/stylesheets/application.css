@@ -33,6 +33,11 @@
     font-size: 16px;
  }
 
+  input[type="password"]{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+ }
+
 
  .red-bold{
      color: rgb(158, 9, 9);
