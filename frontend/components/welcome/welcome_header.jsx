@@ -27,7 +27,7 @@ class WelcomeHeader extends React.Component{
         if (this.props.currentUser) {
             credentials = (<div className="credentials">
                 <div className="credentials-container">
-                    <button id="Logout" onClick={props.logout}>Logout</button>
+                    <button id="Logout" onClick={this.props.logout}>Logout</button>
                 </div>
             </div>);
         }
