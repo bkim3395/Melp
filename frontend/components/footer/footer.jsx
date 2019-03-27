@@ -1,9 +1,12 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 export default (props) => {
 
     return(
         <div className="footer">
+        <p><FontAwesomeIcon icon={['fab', 'yelp']} /></p>
         <div className="footer-container">
             <div>
                 <p className="red-bold">This clone was coded by:</p>
