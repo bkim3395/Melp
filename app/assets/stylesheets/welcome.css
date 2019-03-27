@@ -14,6 +14,7 @@
 .credentials{
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 60px;
 }
 
 .credentials-container{
@@ -36,10 +37,53 @@
     border-radius: 7px;
 }
 
+.logo-wrapper{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
 .site-logo{
+    width: 260px;
+    height: 80px;
     padding-top: 100px;
-    text-align: center;
-    font-size: 50px;
-    font-weight: bold;
-    color: red;
+    background: url(https://i.imgur.com/S6PlXFq.png);
+    background-size: cover;
+}
+
+.search-form{
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+}
+
+.search-wrapper{
+    background-color: white;
+    border-right: 1px solid black;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    padding: 12px 20px 12px 10px;
+}
+
+.search-prefix{
+    padding-right: 10px;
+}
+
+.search-wrapper input{
+    border: none;
+    border-color: transparent;
+    width: 230px;
+}
+
+.search-form button{
+    background-color: #d32323;
+    width: 40px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    border: 0;
+    margin: 0;
+}
+
+.search-form button:active{
+    background-color: #360a0a;
 }

@@ -1,10 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 class WelcomeHeader extends React.Component{
 
     constructor(props){
         super(props);
+        this.handleSubmit.bind(this);
+    }
+
+    handleSubmit(event){
+        event.preventDefault();
     }
 
     render(){
@@ -26,14 +33,26 @@ class WelcomeHeader extends React.Component{
         }
 
         const searchForm = (
-            <form></form>
+            <form className="search-form" onSubmit={this.handleSubmit}>
+            <label className="search-wrapper">
+            <span className="search-prefix">Find</span>
+            <input placeholder="Korean food, Indian food, etc..." type="text"   
+                   className="search-box"/>
+            </label>
+            <button className="search-submit" type="submit">
+                    <FontAwesomeIcon icon="search" />
+            </button>
+            </form>
         );
 
         return (
             <>
                 <div className="welcome-header">
                     {credentials}
-                    <div className="site-logo">MELP</div>
+                    <div className="logo-wrapper">                    
+                        <div className="site-logo"></div>
+                    </div>
+                    {searchForm}
                 </div>
             </>
         );

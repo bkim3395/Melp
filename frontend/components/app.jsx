@@ -8,11 +8,11 @@ import Footer from './footer/footer'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-// import { faYelp } from '@fortawesome/free-solid-svg-icons'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 
 
 export default (props) => {
-    library.add(fab);
+    library.add(fab, faSearch);
 
     return(
         <>
