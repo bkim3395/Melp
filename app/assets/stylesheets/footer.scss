@@ -28,11 +28,8 @@
      padding-right: 5px;
  }
 
- .github-link::before{
-     content: image-url('github-logo.png');
-     position: relative;
-     padding-right: 10px;
-     bottom: -10px;
+ .github-link{
+     margin-left: 10px;
  }
 
  .footer-image{

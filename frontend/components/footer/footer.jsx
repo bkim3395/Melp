@@ -16,7 +16,9 @@ export default (props) => {
             <div>
                 <p className="red-bold">My Contact Information:</p>
                 <br></br>
-                <p className="github"><a className="github-link" href="https://github.com/bkim3395">Github</a></p>
+                <p className="github">
+                <FontAwesomeIcon icon={['fab', 'github']} />
+                <a className="github-link" href="https://github.com/bkim3395">Github</a></p>
             </div>
             <div>
                 <p className="red-bold">I like pie.</p>
