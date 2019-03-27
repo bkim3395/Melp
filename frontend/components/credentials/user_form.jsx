@@ -40,7 +40,7 @@ class SessionForm extends React.Component {
         }
 
         else{
-            demoButton = (<button onClick={this.handleDemo}>Demo User</button>)
+            demoButton = (<input type="submit" onClick={this.handleDemo} value="Demo User" />)
         }
 
 
@@ -49,6 +49,7 @@ class SessionForm extends React.Component {
             <InputHeader />
             <div className="sign-form-whole">
                 <div className="sign-form">
+                    <h1>{this.props.formType}!</h1>
                     <form onSubmit={this.handleSubmit} className="authForm">
                         <label>
                             <input type="text" value={this.state.username}
@@ -60,7 +61,7 @@ class SessionForm extends React.Component {
                             onChange={this.handleInput("password")} placeholder="Password" />
                         </label>
                         <div className="sign-form-buttons">
-                            <button> {this.props.formType} </button>
+                            <input type="submit" value={this.props.formType} /> 
                             {demoButton}
                         </div>
                     </form>
