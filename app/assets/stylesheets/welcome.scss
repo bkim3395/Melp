@@ -102,6 +102,11 @@
     background-color: #360a0a;
 }
 
+.search-form button:hover{
+    filter: brightness(150%);
+}
+
+
 .welcome-suggestions{
     display: flex;
     min-width: 1000px;
