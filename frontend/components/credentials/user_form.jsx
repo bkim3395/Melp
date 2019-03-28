@@ -24,19 +24,26 @@ class SessionForm extends React.Component {
 
     handleDemo(event){
         event.preventDefault();
-        this.props.processForm({username: "username", password: "password"});
+        this.props.processForm({email: "username@gmail.com", password: "password"});
     }
 
     render() {
 
-        let emailBox;
+        let nameBox;
         let demoButton;
+        let errors = this.props.errors.map((ele,idx) => {
+            return(<ul key={idx}>{ele}</ul>);
+        });
 
         if(this.props.formType === "Sign Up"){
-            emailBox = (<label>
-            <input type="text" value={this.state.email} 
-            onChange={this.handleInput("email")} placeholder="Email" />
-            </label>)
+            nameBox = (<div className="name-form"><label>
+            <input type="text" value={this.state.first_name} 
+            onChange={this.handleInput("first_name")} placeholder="First Name" />
+            </label>
+            <label>
+                <input type="text" value={this.state.last_name}
+                    onChange={this.handleInput("last_name")} placeholder="Last Name" />
+            </label></div>)
         }
 
         else{
@@ -51,11 +58,11 @@ class SessionForm extends React.Component {
                 <div className="sign-form">
                     <h1>{this.props.formType}!</h1>
                     <form onSubmit={this.handleSubmit} className="authForm">
+                        {nameBox}
                         <label>
-                            <input type="text" value={this.state.username}
-                            onChange={this.handleInput("username")} placeholder="Username" />
-                        </label>
-                        {emailBox}
+                            <input type="text" value={this.state.email}
+                                onChange={this.handleInput("email")} placeholder="Email" />
+                            </label>
                         <label>
                             <input type="password" value={this.state.password} 
                             onChange={this.handleInput("password")} placeholder="Password" />
@@ -66,7 +73,7 @@ class SessionForm extends React.Component {
                         </div>
                     </form>
                     <ul id="CredentialErrors">
-                        {this.props.errors}
+                        {errors}
                     </ul>
             </div>
             <div className="form-image">

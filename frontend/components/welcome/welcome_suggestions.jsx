@@ -4,7 +4,7 @@ export default (props) => {
 
     return(
         <div className="welcome-suggestions">
-        <h2 className="suggestion-title">Pick your Cuisine!</h2>
+        <h2 className="suggestion-title">Find the Best Business in Town</h2>
         <div className="cuisine-list">
             <div className="cuisine">
                 <img src={window.koreaURL}></img>

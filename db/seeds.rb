@@ -9,24 +9,22 @@
 User.destroy_all
 Business.destroy_all
 
-User.create(username: "username", password: "password",
-email: "username@gmail.com", latitude: 40.751369,
-longitude: -73.983927)
+User.create(email: "username@gmail.com", first_name: "Demo", last_name: "User", password: "password",
+latitude: 40.751369, longitude: -73.983927)
 
-User.create(username: "reviewer1", password: "password",
-email: "null1139@gmail.com", latitude: 40.774615,
+User.create(email: "null1139@gmail.com", first_name: "Kevin", last_name: "Smith", password: "password", latitude: 40.774615,
 longitude: -73.780564)
 
-User.create(username: "reviewer2", password: "password",
-email: "reviewer2@gmail.com", latitude: 40.751369,
+User.create(email: "reviewer1@gmail.com", first_name: "Mao", last_name: "Asada", password: "password",
+latitude: 40.751369, longitude: -73.983927)
+
+User.create(email: "reviewer2@gmail.com", first_name: "James", last_name: "Bond", password: "password",
+latitude: 40.751369, longitude: -73.983927)
+
+User.create(email: "reviewer3@gmail.com", first_name: "Sam", last_name: "West", password: "password", latitude: 40.751369,
 longitude: -73.983927)
 
-User.create(username: "reviewer3", password: "password",
-email: "reviewer3@gmail.com", latitude: 40.751369,
-longitude: -73.983927)
-
-User.create(username: "reviewer4", password: "password",
-email: "reviewer4@gmail.com", latitude: 40.751369,
+User.create(email: "reviewer4@gmail.com", first_name: "Yuna", last_name: "Kim", password: "password", latitude: 40.751369,
 longitude: -73.983927)
 
 Business.create(name: "MADANGSUI", cuisine: "Korean",

@@ -4,7 +4,7 @@ import UserForm from './user_form';
 
 const msp = (state) => {
     return {
-        user: {username: "", email: "", password: ""},
+        user: {first_name: "", last_name: "", email: "", password: ""},
         errors: state.errors.session,
         formType: 'Sign Up',
     };

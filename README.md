@@ -1,7 +1,7 @@
 # README
 
-Test username: username, password: password
-user, 12345678
+git log --graph --oneline --branches
+using testUser as testing obj for aws
 
 
 
