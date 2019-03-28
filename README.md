@@ -1,7 +1,7 @@
 # README
 
 git log --graph --oneline --branches
-using testUser as testing obj for aws
+using testuser@gmail.com as testing obj for aws
 
 
 

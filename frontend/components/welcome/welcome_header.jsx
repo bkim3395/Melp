@@ -18,8 +18,8 @@ class WelcomeHeader extends React.Component{
 
         let credentials = (<div className="credentials">
             <div className="credentials-container">
-                <Link to="/login">Log In</Link>
-                <Link to="/signup" className="signup">Sign Up</Link>
+                <Link to="/login" id="login">Log In</Link>
+                <Link to="/signup" id="signup">Sign Up</Link>
             </div>
         </div>
         );

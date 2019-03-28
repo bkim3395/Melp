@@ -29,11 +29,41 @@
 #logout{
     background:none !important;
     border:none; 
-    padding:0!important;
+    padding: 0 15px;
     font: inherit;
     cursor: pointer;
     color: white;
-    font-weight: 700;
+    font-weight: 600;
+    font-size: 14px;
+    padding-bottom: 9px;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+}
+
+#logout:hover{
+    border-bottom: 3px solid white;
+}
+
+#login{
+    padding: 0 15px;
+    padding-top: 6px;
+    padding-bottom: 9px;
+    margin-right: 10px;
+    border-top: 3px solid transparent;
+    border-bottom: 3px solid transparent;
+}
+
+#login:hover{
+    border-bottom: 3px solid white;
+}
+
+#signup:hover{
+    background-color: white;
+    color: black;
+}
+
+#signup{
+    background-color: transparent;
 }
 
 .credentials-container a{
@@ -47,10 +77,6 @@
     padding: 7px 20px;
     border: 2px solid white;
     border-radius: 4px;
-}
-
-.signup a:hover{
-  filter: brightness(150%);
 }
 
 .logo-wrapper{
