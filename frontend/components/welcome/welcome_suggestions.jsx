@@ -7,18 +7,22 @@ export default (props) => {
         <h2 className="suggestion-title">Find the Best Business in Town</h2>
         <div className="cuisine-list">
             <div className="cuisine">
-                <img src={window.koreaURL}></img>
-                <div>Korean Food</div>
+                    <img src={window.koreaURL}></img>
+                    <div><p>Korean Food</p></div>
             </div>
             <div className="cuisine">
                 <img src={window.japanURL}></img>
-                <div>Japanese Food</div>
+                    <div><p>Japanese Food</p></div>
             </div>
             <div className="cuisine">
                 <img src={window.chinaURL}></img>
-                <div>Chinese Food</div>
+                    <div><p>Chinese Food</p></div>
             </div>
-        </div>  
+            <div className="cuisine">
+                <img src={window.indiaURL}></img>
+                    <div><p>Indian Food</p></div>
+                </div>
+            </div>  
         </div>
     );
 

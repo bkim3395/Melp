@@ -31,7 +31,6 @@
     border:none; 
     padding:0!important;
     font: inherit;
-    /*border is optional*/
     cursor: pointer;
     color: white;
     font-weight: 700;
@@ -40,13 +39,18 @@
 .credentials-container a{
     color: white;
     text-decoration: none;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .credentials-container a:last-child{
-    padding: 7px;
+    padding: 7px 20px;
     border: 2px solid white;
-    border-radius: 7px;
+    border-radius: 4px;
+}
+
+.signup a:hover{
+  filter: brightness(150%);
 }
 
 .logo-wrapper{
@@ -110,7 +114,8 @@
 .welcome-suggestions{
     display: flex;
     min-width: 1000px;
-    padding: 0 8%;
+    padding: 0 6%;
+    margin-bottom: 70px;
     flex-direction: column;
 }
 
@@ -129,38 +134,50 @@
 }
 
 .cuisine{
-    position:relative;
+    display: flex;
+    flex-direction: column;
     cursor: pointer;
-
+    width: 218px;
+    font-size: 14px;
 }
 
 .cuisine img{
-    height: 250px;
-    width: 250px;
-    border-radius: 15px;
+    height: 174px;
+    width: 218px;
+    border-top-left-radius: 15px;    
+    border-top-right-radius: 15px;
 }
 
 .cuisine div{
-    display: flex;
+    // position: absolute;
     box-sizing: border-box;
-    position: absolute;
-    top: 0px;
-    width: 250px;
-    height: 250px;
-    border-radius: 15px;    
+    bottom: -37px;
+    width: 218px;
+    height: 42px;
     text-align: center;
-    color: transparent;
+    vertical-align: middle;
+    border: 1px solid #e6e6e6;
+    border-top-color: transparent;
 }
 
-.cuisine div:hover{
-    display: block;
-    opacity: 0.6;
-    padding-top:100px;
-    padding-bottom:100px;
-    background-color: #413838;
-    color: white;
-    font-size: 20px;
-    font-weight: bold;
-    text-align: center;
+
+
+
+.cuisine:hover{
+    box-shadow: 1px 4px 4px rgb(167, 165, 165);
+    color: rgb(54, 174, 214);
 }
+
+
+// .cuisine div:hover{
+//     display: block;
+//     opacity: 0.6;
+//     padding-top:100px;
+//     padding-bottom:100px;
+//     background-color: #413838;
+//     color: white;
+//     font-size: 20px;
+//     font-weight: bold;
+//     text-align: center;
+// }
 

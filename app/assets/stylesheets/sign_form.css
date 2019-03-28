@@ -12,6 +12,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-right: 120px;
 }
 
 .sign-form h1{
@@ -32,19 +33,39 @@
     padding: 0 15px;
 }
 
+.authForm fieldset{
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #cccccc;
+    border-bottom: 1px solid transparent;
+    text-align:center;
+    width: 304px;
+}
+
+.authForm legend{
+    font-size: 13m;
+    padding: 0 15px;
+    margin: 0 auto;
+    color: #666666;
+}
+
 
 .authForm input[type="text"]{
     margin: 3px 0;
-    padding: 3px 0;
+    padding: 6px 0;
+    padding-left: 6px;
     width: 300px;
     border-radius: 3px;
+    border: 1px solid #999999;
 }
 
 .authForm input[type="password"]{
     margin: 3px 0;
-    padding: 3px 0;
+    padding: 6px 0;
+    padding-left: 6px;
     width: 300px;
     border-radius: 3px;
+    border: 1px solid #999999;
 }
 
 .name-form{
@@ -58,17 +79,21 @@
 
 .name-form input[type="text"]{
     margin: 3px 0;
-    padding: 3px 0;
-    width: 147px;
+    padding: 6px 0;
+    padding-left: 6px;
+    width: 143px;
     border-radius: 3px;
+    border: 1px solid #999999;
 }
 
 
-.name-form input[type="text"]:first-child{
-    margin-right: 3px;
+.name-form input:first-child{
+    margin-right: 100px;
 }
 
-
+.name-form input:last-child{
+    margin-right: 0;
+}
 
 
 .sign-form-buttons{
@@ -82,18 +107,30 @@
     background-color: #D32323;
     text-decoration: none;
     border: 1px solid black;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: 700;
     cursor: pointer;
     color: white;
     width: 100%;
-    height: 40px;
+    height: 45px;
     border-radius: 5px;
-    padding: 0 10px;
+    padding: 5px 10px;
     border: 0;
     margin: 0;
 }
 
+.sign-form-buttons input[value="Demo User"]{
+    background-color: #3b5998;
+
+}
+
+
 .sign-form-buttons input[type="submit"]:hover{
     filter: brightness(150%);
+}
+
+.form-image{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }

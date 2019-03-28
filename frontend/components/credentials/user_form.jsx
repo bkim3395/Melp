@@ -31,6 +31,7 @@ class SessionForm extends React.Component {
 
         let nameBox;
         let demoButton;
+        let divider;
         let errors = this.props.errors.map((ele,idx) => {
             return(<ul key={idx}>{ele}</ul>);
         });
@@ -47,7 +48,14 @@ class SessionForm extends React.Component {
         }
 
         else{
-            demoButton = (<input type="submit" onClick={this.handleDemo} value="Demo User" />)
+            
+            demoButton = (<div className="sign-form-buttons">
+            <input type="submit" onClick={this.handleDemo} value="Demo User" />
+            </div>)
+
+            divider = (<fieldset>
+                <legend align="center">OR</legend>
+            </fieldset>)
         }
 
 
@@ -56,8 +64,10 @@ class SessionForm extends React.Component {
             <InputHeader />
             <div className="sign-form-whole">
                 <div className="sign-form">
-                    <h1>{this.props.formType}!</h1>
+                    <h1>{this.props.formType}</h1>
                     <form onSubmit={this.handleSubmit} className="authForm">
+                        {demoButton}
+                        {divider}
                         {nameBox}
                         <label>
                             <input type="text" value={this.state.email}
@@ -69,7 +79,6 @@ class SessionForm extends React.Component {
                         </label>
                         <div className="sign-form-buttons">
                             <input type="submit" value={this.props.formType} /> 
-                            {demoButton}
                         </div>
                     </form>
                     <ul id="CredentialErrors">

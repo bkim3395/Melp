@@ -6,7 +6,7 @@ const msp = (state) => {
     return {
         user: {email: "", password: ""},
         errors: state.errors.session,
-        formType: 'Login',
+        formType: 'Log In',
     };
 };
 
