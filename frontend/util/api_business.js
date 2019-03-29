@@ -4,14 +4,14 @@ export const postReview = (review) => {
         method: "POST",
         data: {review,}
     }))
-}
+};
 
 export const fetchBusiness = (businessId) => {
     return ($.ajax({
         url: `/api/businesses/${businessId}`,
         method: "GET",
     }))
-}
+};
 
 
 export const fetchBusinesses = () => {
@@ -19,4 +19,4 @@ export const fetchBusinesses = () => {
         url: '/api/businesses',
         method: "GET",
     }))
-}
+};

@@ -30,9 +30,7 @@ class Review < ApplicationRecord
         business = Business.find_by(id: business_id)
         business.reviews.each do |review|
             if review.author_id == author_id
-                errors.add(:author_id, message:"You can't post twice in same
-                business!")
-                return
+                errors.messages[:author_id] << "You can't post twice in same business!"
             end
         end
     end

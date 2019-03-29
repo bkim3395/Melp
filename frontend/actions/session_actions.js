@@ -3,7 +3,8 @@ import * as API_S from '../util/api_session';
 export const RECEIVE_SESSION = "RECEIVE_SESSION";
 export const DESTROY_SESSION = "DESTROY_SESSION";
 export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS";
-export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
+export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
+export const CLEAR_ERRORS = "CLEAR ERRORS";
 
 export const receiveCurrentUser = (user) => ({
     type: RECEIVE_SESSION,
@@ -14,17 +15,23 @@ export const logoutCurrentUser = () => ({
     type: DESTROY_SESSION,
 });
 
-export const receiveErrors = (errors) => ({
-    type: RECEIVE_ERRORS,
+export const receiveSessionErrors = (errors) => ({
+    type: RECEIVE_SESSION_ERRORS,
     errors,
 });
+
+export const clearErrors = () => {
+    return({
+        type: CLEAR_ERRORS,
+    })
+}
 
 export const login = (user) => (dispatch) => {
     return API_S.login(user).then((user) => {
         dispatch(receiveCurrentUser(user))}, 
         (errors) => {
                 dispatch({
-                    type: RECEIVE_ERRORS,
+                    type: RECEIVE_SESSION_ERRORS,
                     errors: errors.responseJSON,
                      })
     });
@@ -42,7 +49,7 @@ export const signup = (user) => (dispatch) => {
         dispatch(receiveCurrentUser(user));}, 
         (errors) => {
             dispatch({
-                    type: RECEIVE_ERRORS,
+                    type: RECEIVE_SESSION_ERRORS,
                     errors: errors.responseJSON,
                     })
     });
