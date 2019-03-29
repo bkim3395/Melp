@@ -19,16 +19,10 @@ class Business < ApplicationRecord
     validates :latitude, :longitude, :name, :cuisine, :address, :phone_number,
     :website, presence: true
 
-    has_many :ratings,
-    foreign_key: :business_id,
-    class_name: :Rating 
-
     has_many :reviews,
     foreign_key: :business_id,
     class_name: :Review
 
-    has_one_attached :photos
-
-
+    has_many_attached :photos
 
 end

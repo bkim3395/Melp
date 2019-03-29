@@ -23,15 +23,11 @@ class User < ApplicationRecord
     attr_reader :password
     after_initialize :ensure_session_token
 
-    has_many :ratings,
-    foreign_key: :author_id,
-    class_name: :Rating 
-
     has_many :reviews,
     foreign_key: :author_id,
     class_name: :Review
 
-    has_one_attached :photos
+    has_one_attached :photo
 
     def ensure_session_token
         self.session_token ||= User.generate_session_token

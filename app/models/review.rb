@@ -8,12 +8,13 @@
 #  business_id :integer          not null
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  rating      :integer          not null
 #
 
 class Review < ApplicationRecord
 
-    validates :author_id, :business_id, presence: true, uniqueness: true
-    validates :body, presence: true
+    validates :author_id, :business_id, :body, :rating, presence: true
+    validate :cannot_post_review_twice
 
     belongs_to :author,
     foreign_key: :author_id,
@@ -22,5 +23,19 @@ class Review < ApplicationRecord
     belongs_to :business,
     foreign_key: :business_id,
     class_name: :Business
+
+    has_many_attached :photos
+    
+    def cannot_post_review_twice
+        business = Business.find_by(id: business_id)
+        business.reviews.each do |review|
+            if review.author_id == author_id
+                errors.add(:author_id, message:"You can't post twice in same
+                business!")
+                return
+            end
+        end
+    end
+
 
 end
