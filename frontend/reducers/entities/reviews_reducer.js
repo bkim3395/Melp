@@ -6,7 +6,8 @@ export default (state = {}, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_BUSINESS:
-            return action.response.review;
+            let reviews = action.response.review || {};
+            return reviews
         case RECEIVE_REVIEW:
             return merge({},state,action.review)
         default:

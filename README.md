@@ -4,7 +4,7 @@ git log --graph --oneline --branches
 using testuser@gmail.com as testing obj for aws
 u.photos.attach(io: File.open('/home/bkim3395/Downloads/goodboye.jpg'), file_name: 'goodboye.jpg')
 
-
+Errors: http://localhost:3000/?rating=3#/business/68
 
 
 This README would normally document whatever steps are necessary to get the

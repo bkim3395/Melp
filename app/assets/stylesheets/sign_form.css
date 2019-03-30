@@ -17,7 +17,22 @@
 
 .sign-form h1{
     color: #D32323;
+    margin-bottom: 18px;
 }
+
+#credential-redirect{
+    font-weight: 600;
+    font-size: 14px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.cr-link{
+    text-decoration: none;
+    border: 3px, solid, transparent;
+    padding-left: 5px;
+}
+
 
 .sign-form ul{
     padding: 0;

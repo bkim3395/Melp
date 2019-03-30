@@ -7,7 +7,7 @@ export default ({store}) => {
     return(
         <Provider store={store} >
             <HashRouter>
-                <App />
+                <App store={store}/>
             </HashRouter>
         </Provider>
     );

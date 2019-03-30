@@ -3,11 +3,9 @@ import WelcomeHeader from './welcome_h_container'
 import WelcomeSuggestions from './welcome_suggestions';
 
 
-export default (props) => {
-    return(
-        <>
+
+export default () => (<>
         <WelcomeHeader />
         <WelcomeSuggestions />
         </>
-    )
-}
+);

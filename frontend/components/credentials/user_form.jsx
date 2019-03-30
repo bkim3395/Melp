@@ -1,5 +1,6 @@
 import React from 'react';
 import InputHeader from '../header/input_header'
+import { Link } from 'react-router-dom'
 
 class SessionForm extends React.Component {
 
@@ -9,6 +10,10 @@ class SessionForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
+    }
+
+    componentDidMount(){
+        this.props.clearErrors();
     }
 
     handleInput(type) {
@@ -35,6 +40,7 @@ class SessionForm extends React.Component {
         let errors = this.props.errors.map((ele,idx) => {
             return(<ul key={idx}>{ele}</ul>);
         });
+        let redirect;
 
         if(this.props.formType === "Sign Up"){
             nameBox = (<div className="name-form"><label>
@@ -45,6 +51,8 @@ class SessionForm extends React.Component {
                 <input type="text" value={this.state.last_name}
                     onChange={this.handleInput("last_name")} placeholder="Last Name" />
             </label></div>)
+            redirect = (<p id="credential-redirect">Already a member? 
+             <Link to="/login" className="cr-link">Log In</Link></p>)
         }
 
         else{
@@ -56,6 +64,9 @@ class SessionForm extends React.Component {
             divider = (<fieldset>
                 <legend align="center">OR</legend>
             </fieldset>)
+
+            redirect = (<p id="credential-redirect">New to Melp? 
+            <Link to="/signup" className="cr-link">Sign Up</Link></p>)
         }
 
 
@@ -65,6 +76,7 @@ class SessionForm extends React.Component {
             <div className="sign-form-whole">
                 <div className="sign-form">
                     <h1>{this.props.formType}</h1>
+                    {redirect}
                     <form onSubmit={this.handleSubmit} className="authForm">
                         {demoButton}
                         {divider}

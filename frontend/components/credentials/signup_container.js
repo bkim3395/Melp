@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { signup } from '../../actions/session_actions';
+import { signup, clearErrors} from '../../actions/session_actions';
 import UserForm from './user_form';
 
 const msp = (state) => {
@@ -12,6 +12,7 @@ const msp = (state) => {
 
 const mdp = (dispatch) => ({
     processForm: (user) => dispatch(signup(user)),
+    clearErrors: () => {dispatch(clearErrors())}
 });
 
 export default connect(msp, mdp)(UserForm);

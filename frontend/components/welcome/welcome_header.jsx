@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
@@ -7,11 +7,12 @@ class WelcomeHeader extends React.Component{
 
     constructor(props){
         super(props);
-        this.handleSubmit.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(event){
         event.preventDefault();
+        this.props.history.push("/search")
     }
 
     render(){
@@ -60,4 +61,4 @@ class WelcomeHeader extends React.Component{
     }
 };
 
-export default WelcomeHeader
+export default withRouter(WelcomeHeader)

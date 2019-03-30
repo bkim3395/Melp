@@ -28,6 +28,7 @@ export const receiveReviewErrors = (errors) =>{
                         type: RECEIVE_REVIEWS_ERRORS,
                         errors,
                     })};
+                    
 
 
 export const fetchBusinesses = () => (dispatch) => {
@@ -45,8 +46,7 @@ export const fetchBusiness = (businessId) =>(dispatch) => {
 export const postReview = (review) => (dispatch) => {
     return API_B.postReview(review).then(
         (review) => {
-            
-            dispatch(receiveReview(review))
+            return dispatch(receiveReview(review))
         },
         (errors) => {
             dispatch(receiveReviewErrors(errors.responseJSON))
