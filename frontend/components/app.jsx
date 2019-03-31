@@ -24,7 +24,7 @@ export default (props) => {
             <Route exact path="/search" component={Search} />
             <ProtectedReviewRoute path='/business/:businessId/review'
             component={Review}
-            store={props.store} />
+            />
             {/* <ProtectedRoute exact path="/business/:businessId/review" component={Review} /> */}
             <Route exact path="/business/:businessId" component={Business} />
             <AuthRoute path="/signup" component={Signup} />

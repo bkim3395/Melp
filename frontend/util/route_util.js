@@ -3,7 +3,10 @@ import { Redirect, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 const msp = state => {
-    return { loggedIn: Boolean(state.session.currentUser) };
+    return { loggedIn: Boolean(state.session.currentUser),
+            reviews: state.entities.reviews,
+            currentUser: state.session.currentUser,
+        };
 };
 
 const Auth = ({ loggedIn, path, exact, component: Component }) => (
@@ -29,23 +32,24 @@ const Protect = ({ loggedIn, path, exact, component: Component }) => (
 );
 
 
-const ProtectReview = ({ loggedIn, store, path, exact, component: Component}) => (
+const ProtectReview = ({ reviews, currentUser, path, exact, component: Component}) => (
     <Route
         path={path}
         exact={exact}
         render={props => {
             let redirect = false;
             debugger
-            let arr = Object.values(store.getState().entities.reviews);
+            let arr = Object.values(reviews);
             arr.forEach((review) => {
                     debugger
-                if(review.author_id === store.getState().session.currentUser){
+                if(review.author_id === currentUser){
                     debugger
                     redirect = true;
                 }
             })
             debugger
-            return(redirect ? <Redirect to={path.substring(0,21)} /> : <Component {...props} />)
+            return (redirect ? <Redirect to={`/business/${props.match.params.businessId}/`} /> 
+            : <Component {...props} />)
         }}
     />
 )

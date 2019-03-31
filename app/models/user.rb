@@ -59,4 +59,37 @@ class User < ApplicationRecord
     def self.generate_session_token
         SecureRandom.urlsafe_base64
     end
+
+    def self.fetch_avatar
+        file0 = File.open("app/assets/images/avatar/cat.png")
+        name0 = "cat.png"
+        file1 = File.open("app/assets/images/avatar/dog.png")
+        name1 = "dog.png"        
+        file2 = File.open("app/assets/images/avatar/fox.png")
+        name2 = "fox.png"
+        file3 = File.open("app/assets/images/avatar/frog.png")
+        name3 = "frog.png"
+        file4 = File.open("app/assets/images/avatar/monkey.png")
+        name4 = "monkey.png"
+        file5 = File.open("app/assets/images/avatar/panda.png")
+        name5 = "panda.png"
+        file6 = File.open("app/assets/images/avatar/penguin.png")
+        name6 = "penguin.png"
+        file7 = File.open("app/assets/images/avatar/pig.png")
+        name7 = "pig.png"        
+        file8 = File.open("app/assets/images/avatar/sheep.png")
+        name8 = "sheep.png"
+        file9 = File.open("app/assets/images/avatar/tiger.png")
+        name9 = "tiger.png"
+        return([[file0,name0],[file1,name1],[file2,name2],[file3,name3],
+    [file4,name4],[file5,name5],[file6,name6],[file7,name7],[file8,name8],
+    [file9,name9]])
+    end
+
+    def assign_avatar
+        avatars = User.fetch_avatar
+        avatar = avatars.shuffle[0]
+        self.photo.attach(io: avatar[0], filename: avatar[1])
+        return self.photo.attached?
+    end
 end

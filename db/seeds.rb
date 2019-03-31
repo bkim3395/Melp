@@ -27,6 +27,10 @@ longitude: -73.983927)
 User.create(email: "reviewer4@gmail.com", first_name: "Yuna", last_name: "Kim", password: "password", latitude: 40.751369,
 longitude: -73.983927)
 
+User.all.each do |user|
+    user.assign_avatar
+end
+
 Business.create(name: "MADANGSUI", cuisine: "Korean",
 latitude: 40.749872, longitude: -73.985612,
 address: "35 W 35th St, New York, NY 10001",

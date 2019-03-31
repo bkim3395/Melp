@@ -9,7 +9,8 @@ const msp = (state,ownProps) => {
     return ({
         business: state.entities.businesses[ownProps.match.params.businessId] || null,
         reviews: Object.values(state.entities.reviews),
-        users: state.entities.users
+        users: state.entities.users,
+        currentUser: state.session.currentUser,
     });
 }
 
@@ -23,7 +24,6 @@ class Business extends React.Component{
 
     constructor(props){
         super(props)
-
     }
 
     componentDidMount(){
@@ -39,10 +39,26 @@ class Business extends React.Component{
     render(){
         this.businessId = this.props.match.params.businessId;
         this.business = this.props.business;
+        let reviewLink;
+        let alreadySubmitted = false;
+        const that = this;
+
+        this.props.reviews.forEach((review) => {
+            if (review.author_id === that.props.currentUser) {
+                alreadySubmitted = true;
+            }
+        })
+
+        if (!alreadySubmitted) {
+            reviewLink = (
+                <Link to={`/business/${this.props.match.params.businessId}/review`}>Submit Review</Link>
+            );
+        }
 
         const reviews = this.props.reviews.map((review) => {
             return <ReviewItem key={review.id} review={review} users={this.props.users} />
         })
+
 
         if(this.business) {
             return(<>
@@ -57,7 +73,7 @@ class Business extends React.Component{
             <ul>
                 {reviews}
             </ul>
-             <Link to={`/business/${this.props.match.params.businessId}/review`}>Submit Review</Link>
+            {reviewLink}
         </>)
         }
         else{

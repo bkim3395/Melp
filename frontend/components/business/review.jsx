@@ -5,7 +5,6 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
 const msp = (state) => {
-
     return({
         currentUser: state.session.currentUser,
         errors: state.errors.reviews,
@@ -17,7 +16,7 @@ const mdp = (dispatch) => {
     return({
         postReview: (review) => dispatch(postReview(review)),
         clearErrors: () => dispatch(clearErrors()),
-        // fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId)),
+        fetchBusiness: (businessId) => dispatch(fetchBusiness(businessId)),
     })
 }
 
@@ -37,12 +36,12 @@ class Review extends React.Component{
 
     componentDidMount(){
         this.props.clearErrors();
+        this.props.fetchBusiness(this.props.match.params.businessId)
     }
 
     handleSubmit(e){
         e.preventDefault;
         this.props.postReview(this.state)
-        this.props.history.push(`/business/${this.state.business_id}`)
     }
 
     handleInput(field){
