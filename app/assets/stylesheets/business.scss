@@ -39,3 +39,31 @@
 .bh-info-info > p{
     margin-top: 15px;
 }
+
+.bh-info-review{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.bh-info-review a{
+    background-color: #D32323;
+    text-decoration: none;
+    border: 1px solid black;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    color: white;
+    // width: 250px;
+    // height: 45px;
+    border-radius: 5px;
+    padding: 9px 24px 9px 24px;
+    border: 0;
+    margin: 0;
+    margin-bottom: 40px;
+    margin-right: 150px;
+}
+
+.bh-info-review svg{
+    margin-right: 7px;
+}

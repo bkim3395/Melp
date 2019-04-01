@@ -4,6 +4,8 @@ import { fetchBusiness } from '../../actions/business_actions'
 import InputHeader from '../header/input_header'
 import ReviewItem from './review_item'
 import { Link } from 'react-router-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 const msp = (state,ownProps) => {
     return ({
@@ -55,7 +57,8 @@ class Business extends React.Component{
 
         if (!alreadySubmitted && Boolean(this.props.currentUser)) {
             reviewLink = (
-                <Link className="review-link" to={`/business/${this.props.match.params.businessId}/review`}>Submit Review</Link>
+                <Link className="review-link" to={`/business/${this.props.match.params.businessId}/review`}>
+                    <FontAwesomeIcon icon="star" /> Write a Review</Link>
             );
         }
         ////////////////////////////////////////////////////////////////////////////
