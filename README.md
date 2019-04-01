@@ -1,8 +1,8 @@
 # README
 
 git log --graph --oneline --branches
-using testuser@gmail.com as testing obj for aws
-u.photos.attach(io: File.open('/home/bkim3395/Downloads/goodboye.jpg'), file_name: 'goodboye.jpg')
+
+Comment and Index stars are medium stars.
 
 Errors: http://localhost:3000/?rating=3#/business/68
 
