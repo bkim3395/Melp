@@ -49,7 +49,7 @@ class Business extends React.Component{
             }
         })
 
-        if (!alreadySubmitted) {
+        if (!alreadySubmitted && Boolean(this.props.currentUser)) {
             reviewLink = (
                 <Link to={`/business/${this.props.match.params.businessId}/review`}>Submit Review</Link>
             );

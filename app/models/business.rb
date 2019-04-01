@@ -25,4 +25,21 @@ class Business < ApplicationRecord
 
     has_many_attached :photos
 
+    def calculate_ratings
+        
+    if(self.reviews.length == 0)
+        return 0;
+    else
+        sum = 0.0
+        self.reviews.each{|review| sum += review.rating}
+        sum /= self.reviews.length
+        sum *= 2
+        rounded = sum.round
+        rounded = rounded.to_f
+        rounded /= 2
+        return rounded
+    end
+    
+    end
+
 end
