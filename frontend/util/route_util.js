@@ -38,16 +38,12 @@ const ProtectReview = ({ reviews, currentUser, path, exact, component: Component
         exact={exact}
         render={props => {
             let redirect = false;
-            debugger
             let arr = Object.values(reviews);
             arr.forEach((review) => {
-                    debugger
                 if(review.author_id === currentUser){
-                    debugger
                     redirect = true;
                 }
             })
-            debugger
             return (redirect ? <Redirect to={`/business/${props.match.params.businessId}/`} /> 
             : <Component {...props} />)
         }}

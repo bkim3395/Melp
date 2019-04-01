@@ -10,7 +10,7 @@ class Api::ReviewsController < ApplicationController
   end
 
   def reviews_params
-      params.require(:review).permit(:author_id, :business_id, :body, :rating, :photos)
+      params.require(:review).permit(:author_id, :business_id, :body, :rating, photos: [])
   end
 
 

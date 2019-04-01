@@ -56,11 +56,17 @@ class Business extends React.Component{
         }
 
         const reviews = this.props.reviews.map((review) => {
-            return <ReviewItem key={review.id} review={review} users={this.props.users} />
+            return <ReviewItem key={review.id} review={review} user={this.props.users[review.author_id]} />
         })
 
 
         if(this.business) {
+
+            const businessImg = this.business.photoUrls.map((photo, idx) => {
+                return (<img key={idx} src={photo} />)
+            })
+
+
             return(<>
             <InputHeader />
             <ul>
@@ -70,6 +76,7 @@ class Business extends React.Component{
                 <li key={4}>{this.business.phone_number}</li>
                 <li key={5}>{this.business.website}</li>
             </ul>
+                {businessImg}
             <ul>
                 {reviews}
             </ul>

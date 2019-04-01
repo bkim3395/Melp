@@ -43,10 +43,10 @@ export const fetchBusiness = (businessId) =>(dispatch) => {
     })
 };
 
-export const postReview = (review) => (dispatch) => {
-    return API_B.postReview(review).then(
-        (review) => {
-            return dispatch(receiveReview(review))
+export const postReview = (formData) => (dispatch) => {
+    return API_B.postReview(formData).then(
+        (formData) => {
+            return dispatch(receiveReview(formData))
         },
         (errors) => {
             dispatch(receiveReviewErrors(errors.responseJSON))

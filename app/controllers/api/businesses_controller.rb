@@ -1,19 +1,15 @@
 class Api::BusinessesController < ApplicationController
 
   def index
-    @businesses = Business.all
+    @businesses = Business.with_attached_photos.all
     render :index
   end
 
   def show
-    @business = Business.find_by(id: params[:id])
-    @reviews = @business.reviews
+    @business = Business.with_attached_photos.find_by(id: params[:id])
+    @reviews = @business.reviews.with_attached_photos
     render :show
   end
-
-#   def business_params
-#     params.require(:business).permit(:first_name, :last_name, :password, :email, :photo)
-#   end
 
 
 end

@@ -1,8 +1,10 @@
-export const postReview = (review) => {
+export const postReview = (formData) => {
     return ($.ajax({
         url: "/api/reviews",
         method: "POST",
-        data: {review,}
+        data: formData,
+        contentType: false,
+        processData: false,
     }))
 };
 

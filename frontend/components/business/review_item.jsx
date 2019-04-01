@@ -1,12 +1,21 @@
 import React from 'react';
 
-export default ({review, users}) => {
+export default ({review, user}) => {
+
+
+    const reviewImg = review.photoUrls.map((photo, idx) => {
+        return(<img key={idx}  src={photo} />)
+    })
+
     return(<li>
-        <p>{users[review.author_id].first_name.concat(" ", users[review.author_id].last_name)}</p>
+        <p>{user.first_name.concat(" ", user.last_name)}</p>
+        <img src={user.photoUrl} />
 
         <p>{review.rating}</p>
 
         <p>{review.body}</p>
+
+        {reviewImg}
 
     </li>)
 }
