@@ -22,6 +22,9 @@ const mdp = (dispatch) => {
 
 class Business extends React.Component{
 
+    //Deals with Rendering the page -> Fetch business after first render
+    //Update makes sure that, if move to another business page directly,
+    //correct business is fetched.
     componentDidMount(){
         this.props.fetchBusiness(this.props.match.params.businessId);
     }
@@ -31,13 +34,18 @@ class Business extends React.Component{
             this.props.fetchBusiness(this.props.match.params.businessId);
         }
     }
-
+    //////////////////////////////////////////////////////////////////////////
     render(){
+
+        //For easy access//
         this.businessId = this.props.match.params.businessId;
         this.business = this.props.business;
+        ///////////////////
+
+        //To generate Submit Review button if logged in and hasn't submit review yet
         let reviewLink;
         let alreadySubmitted = false;
-        const that = this;
+        const that = this
 
         this.props.reviews.forEach((review) => {
             if (review.author_id === that.props.currentUser) {
@@ -47,17 +55,19 @@ class Business extends React.Component{
 
         if (!alreadySubmitted && Boolean(this.props.currentUser)) {
             reviewLink = (
-                <Link to={`/business/${this.props.match.params.businessId}/review`}>Submit Review</Link>
+                <Link className="review-link" to={`/business/${this.props.match.params.businessId}/review`}>Submit Review</Link>
             );
         }
+        ////////////////////////////////////////////////////////////////////////////
 
+        //Generating Review Items for Rendering//
         const reviews = this.props.reviews.map((review) => {
             return <ReviewItem key={review.id} review={review} user={this.props.users[review.author_id]} />
         })
+        /////////////////////////////////////////
 
-
+        //ACTUAL RENDERING////////////////////////////////////////////////////
         if(this.business) {
-
             const businessImg = this.business.photoUrls.map((photo, idx) => {
                 return (<img key={idx} src={photo} />)
             })
@@ -65,27 +75,55 @@ class Business extends React.Component{
 
             return(<>
             <InputHeader />
-            <ul>
-                <li key={1}>{this.business.name}</li>
-                <li key={2}>{this.business.cuisine}</li>
-                <li key={3}>{this.business.address}</li>
-                <li key={4}>{this.business.phone_number}</li>
-                <li key={5}>{this.business.website}</li>
-            </ul>
-                {businessImg}
+            <div className="business-header">
+
+
+
+
+                <div className="bh-info">
+                    <div className="bh-info-info">
+                        <h2>{this.business.name}</h2>
+                        <div>
+                            <div className={`br-big-${this.business.rating}`}></div>
+                        </div>
+
+                            <p>{this.business.cuisine}</p>
+                    </div>
+
+                    <div className="bh-info-review">
+                        {reviewLink}
+                    </div>
+                </div>
+
+
+
+
+                <div className="bh-images">
+                    <div className="businessMap"></div>
+                    <ul>
+                        <li key={3}>{this.business.address}</li>
+                        <li key={4}>{this.business.phone_number}</li>
+                        <li key={5}>{this.business.website}</li>
+                    </ul>
+                    {businessImg}
+                </div>
+            </div>
+            <div className="business-reviews">
             <ul>
                 {reviews}
             </ul>
-            {reviewLink}
+            </div>
         </>)
         }
+        ///////////////////////////////////////////////////////////////////
+        //If Business hasn't loaded yet and is first rendering//
         else{
             return (<>
                 <InputHeader />
                 <p>Stand By...</p>
             </>)
         }
-
+        ////////////////////////////////////////////////////////
     }
 
 }

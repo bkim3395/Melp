@@ -37,7 +37,11 @@ class Business < ApplicationRecord
         rounded = sum.round
         rounded = rounded.to_f
         rounded /= 2
-        return rounded
+        if(rounded == 0.5)
+            return 1
+        else
+            return rounded
+        end
     end
     
     end
