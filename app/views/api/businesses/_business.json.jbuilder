@@ -3,5 +3,5 @@ json.set! business.id do
     :cuisine, :address, :phone_number, :website
     json.photoUrls business.photos.map { |file| url_for(file)}
     json.rating business.calculate_ratings
-
+    json.reviews_count business.reviews.length
 end

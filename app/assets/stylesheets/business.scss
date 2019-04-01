@@ -13,10 +13,29 @@
 .bh-info{
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     margin: 0 15%;
 }
 
 .bh-info-info{
     display: flex;
     flex-direction: column;
+}
+
+.bh-info-info h1{
+    margin-bottom: 15px;
+}
+
+.bh-star-holder{
+    display: flex;
+    align-items: center;
+}
+
+.bh-star-holder p{
+    margin: 0;
+    margin-left: 15px;
+}
+
+.bh-info-info > p{
+    margin-top: 15px;
 }

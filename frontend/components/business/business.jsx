@@ -83,10 +83,10 @@ class Business extends React.Component{
                 <div className="bh-info">
                     <div className="bh-info-info">
                         <h1>{this.business.name}</h1>
-                        <div>
+                        <div className="bh-star-holder">
                             <div className={`br-big-${this.business.rating}`}></div>
+                            <p>{`${this.business.reviews_count} reviews`}</p>
                         </div>
-
                             <p>{this.business.cuisine}</p>
                     </div>
 
@@ -99,33 +99,7 @@ class Business extends React.Component{
 
 
                 <div className="bh-images">
-                        <div className={`br-mid-0`}></div>
-                        <br></br>
-                        <div className={`br-mid-1`}></div>
-                        <br></br>
-
-                        <div className={`br-mid-1.5`}></div>
-                        <br></br>
-
-                        <div className={`br-mid-2`}></div>
-                        <br></br>
-
-                        <div className={`br-mid-2.5`}></div>
-                        <br></br>
-
-                        <div className={`br-mid-3`}></div>
-                        <br></br>
-
-                        <div className={`br-mid-3.5`}></div>
-                        <br></br>
-
-                        <div className={`br-mid-4`}></div>
-                        <br></br>
-
-                        <div className={`br-mid-4.5`}></div>
-                        <br></br>
-
-                        <div className={`br-mid-5`}></div>
+                  
 
 
                     <div className="businessMap"></div>
