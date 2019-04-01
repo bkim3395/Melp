@@ -22,10 +22,6 @@ const mdp = (dispatch) => {
 
 class Business extends React.Component{
 
-    constructor(props){
-        super(props)
-    }
-
     componentDidMount(){
         this.props.fetchBusiness(this.props.match.params.businessId);
     }
