@@ -74,14 +74,14 @@ class Business extends React.Component{
             const businessImg = this.business.photoUrls.map((photo, idx) => {
                 return (<img key={idx} src={photo} />)
             })
-
+            
+            let location = this.business.address.split(', ');
+            let address1 = location[0];
+            let address2 = location[1].concat(', ',location[2]);
 
             return(<>
             <InputHeader />
             <div className="business-header">
-
-
-
 
                 <div className="bh-info">
                     <div className="bh-info-info">
@@ -92,7 +92,6 @@ class Business extends React.Component{
                         </div>
                             <p>{this.business.cuisine}</p>
                     </div>
-
                     <div className="bh-info-review">
                         {reviewLink}
                     </div>
@@ -102,23 +101,42 @@ class Business extends React.Component{
 
 
                 <div className="bh-images">
-                  
-
-
-                    <div className="businessMap"></div>
-                    <ul>
-                        <li key={3}>{this.business.address}</li>
-                        <li key={4}>{this.business.phone_number}</li>
-                        <li key={5}>{this.business.website}</li>
-                    </ul>
-                    {businessImg}
+                    <div className="map-container">
+                        <div className="businessMap"></div>
+                        <div className="map-info">
+                            <div className="map-info-address">
+                                <p><FontAwesomeIcon icon="map-marker-alt" />
+                                    {address1}</p>
+                                <p>{address2}</p>
+                            </div>
+                            <div className="map-info-phone">
+                                <p><FontAwesomeIcon icon="phone" />
+                                    {this.business.phone_number}</p>
+                            </div>
+                            <div className="map-info-website">
+                                <p><FontAwesomeIcon icon="window-restore" />
+                                        <Link to={this.business.website}>
+                                        {this.business.website}</Link>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="bh-images-list">
+                            {businessImg}
+                    </div>
                 </div>
             </div>
+
+
             <div className="business-reviews">
             <ul>
                 {reviews}
             </ul>
             </div>
+
+
+
+            
         </>)
         }
         ///////////////////////////////////////////////////////////////////

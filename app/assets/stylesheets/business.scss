@@ -15,6 +15,7 @@
     flex-direction: row;
     justify-content: space-between;
     margin: 0 15%;
+    margin-bottom: 7px;
 }
 
 .bh-info-info{
@@ -24,6 +25,10 @@
 
 .bh-info-info h1{
     margin-bottom: 15px;
+}
+
+.bh-info-info > p:last-child{
+    margin-bottom: 0;    
 }
 
 .bh-star-holder{
@@ -61,9 +66,85 @@
     border: 0;
     margin: 0;
     margin-bottom: 40px;
-    margin-right: 150px;
+    // margin-right: 50px;
+    // margin-right: 150px;
 }
 
 .bh-info-review svg{
     margin-right: 7px;
+}
+
+//////////////////////////////////
+
+.bh-images{
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    margin: 0 15%;
+}
+
+.map-container{
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid #e6e6e6;
+    padding: 5px;
+    width: 288px;
+    margin-right: 5px;
+    font-size: 16px;
+}
+
+.businessMap{
+    width: 286px;
+    height: 135px;
+    background: lightgray;
+    border: 1px solid #e6e6e6;
+}
+
+.map-info{
+    margin: 10px;
+    margin-top: 0;
+    min-width: 750px;
+}
+
+.map-info svg{
+    margin-right: 10px;
+}
+
+.map-info-address{
+    font-weight: 600;
+}
+
+.map-info-address p:last-child{
+    margin: 0;
+    margin-left: 22px;
+}
+
+.map-info-address p:first-child{
+    margin: 0;
+    margin-top: 10px;
+}
+
+.map-info a{
+    text-decoration: none;
+    color: #0073bb;
+}
+
+.map-info a:hover{
+    border-bottom: 1px solid #0073bb;
+}
+
+.bh-images-list{
+    display: flex;
+    align-items: flex-end
+}
+
+.bh-images-list img{
+    width:220px;
+    height:220px;
+    transition: transform .2s; /* Animation */
+}
+
+.bh-images-list img:hover{
+    transform: scale(1.2);
 }
