@@ -3,6 +3,7 @@ import { postReview, fetchBusiness } from '../../actions/business_actions'
 import { clearErrors } from '../../actions/session_actions'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
+import InputHeader from '../header/input_header'
 
 const msp = (state) => {
     return({
@@ -29,10 +30,14 @@ class Review extends React.Component{
             body: "",
             author_id: this.props.currentUser,
             business_id: this.props.match.params.businessId,
-            photos: []
+            photos: [],
+            selected: "0",
+            starSelected: "0"
         }
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleInput = this.handleInput.bind(this);
+        this.handleMouseEnter = this.handleMouseEnter.bind(this);
+        this.handleMouseLeave = this.handleMouseLeave.bind(this);
     }
 
     componentDidMount(){
@@ -58,8 +63,20 @@ class Review extends React.Component{
 
     handleInput(field){
         return (e) => {
-            this.setState({[field]: e.target.value})
+            this.setState({[field]: e.target.value,
+                            selected: e.target.value,
+                            starSelected: e.target.value})
         }
+    }
+
+    handleMouseEnter(e){
+        this.setState({starSelected: e.target.value})
+        
+    }
+
+    handleMouseLeave(e){
+        this.setState({starSelected: this.state.selected,})
+        
     }
 
 
@@ -74,19 +91,47 @@ class Review extends React.Component{
             }
         });
 
+        let starWrapper = `starWrapper-${this.state.starSelected}`
+
         return(
         <>
+        <InputHeader />
         <form className="review-form" onSubmit={this.handleSubmit}>
+        <div className={starWrapper}>
+            <li className="star">            
+                <input type="radio" name="rating" value="1" onClick={this.handleInput("rating")}
+                onMouseEnter={this.handleMouseEnter} 
+                onMouseLeave={this.handleMouseLeave}
+                />
+            </li>
+            <li className="star">
+                <input type="radio" name="rating" value="2" onClick={this.handleInput("rating")} 
+                onMouseEnter={this.handleMouseEnter}
+                onMouseLeave={this.handleMouseLeave}
+                />
+            </li>
+            <li className="star">
+                <input type="radio" name="rating" value="3" onClick={this.handleInput("rating")} 
+                onMouseEnter={this.handleMouseEnter}
+                onMouseLeave={this.handleMouseLeave}
+                />
+            </li>
+            <li className="star">
+                <input type="radio" name="rating" value="4" onClick={this.handleInput("rating")}
+                onMouseEnter={this.handleMouseEnter}
+                onMouseLeave={this.handleMouseLeave}
+                />
+            </li>
+            <li className="star">
+                <input type="radio" name="rating" value="5" onClick={this.handleInput("rating")} 
+                onMouseEnter={this.handleMouseEnter}
+                onMouseLeave={this.handleMouseLeave}
+                />
+            </li>
+        </div>
         <label>Body:
             <textarea value={this.state.body} onChange={this.handleInput("body")}
             placeholder="Please write your review!"></textarea>
-        </label>
-        <label>Rating:
-            <input type="radio" name="rating" value="1" onClick={this.handleInput("rating")} />
-            <input type="radio" name="rating" value="2" onClick={this.handleInput("rating")} />
-            <input type="radio" name="rating" value="3" onClick={this.handleInput("rating")} />
-            <input type="radio" name="rating" value="4" onClick={this.handleInput("rating")} />
-            <input type="radio" name="rating" value="5" onClick={this.handleInput("rating")} />
         </label>
         <label>Submit Photos:
             <input

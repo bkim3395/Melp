@@ -7,6 +7,7 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
     <%if logged_in?%>
     <script type="text/javascript">
       window.currentUser = <%= render('/api/users/user.json.jbuilder',
@@ -22,6 +23,10 @@
     window.logoURL = "<%= image_url('logo.png') %>"
     window.signFormURL = "<%= image_url('sign-form.png') %>"
     window.welcomeURL = "<%= image_url('welcome-img.jpg') %>"
+    window.smallLogoURL = "<%= image_url('small_logo.png') %>"
+    window.starInputURL = "<%= image_url('star_input.png') %>"
+    window.starOutputURL = "<%= image_url('star_output.png') %>"
+
     </script>
   </head>
 

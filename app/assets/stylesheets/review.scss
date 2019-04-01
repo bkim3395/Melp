@@ -1,0 +1,55 @@
+div[class^="starWrapper-"]{
+    display: flex;
+    list-style-type: none;
+    overflow: hidden;
+    background: image-url('star_input.png');
+    width: 162px;
+    height: 30px;
+
+    li{
+        height: 30px;
+        width: 30px;
+        margin: 0 1px;
+
+        input[type="radio"]{
+            opacity: 0;
+            border: none;
+            margin: 0;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+        }
+
+    }
+
+    li:first-child{
+        margin-left: 0px;
+        margin-right: 2px;
+    }
+}
+
+
+.starWrapper-0{
+    background-position: 0px 0px;
+}
+
+.starWrapper-1{
+    background-position: 0px -30px;
+}
+
+.starWrapper-2{
+    background-position: 0px -60px;
+}
+
+.starWrapper-3{
+    background-position: 0px -90px;
+}
+
+.starWrapper-4{
+    background-position: 0px -120px;
+}
+
+.starWrapper-5{
+    background-position: 0px -150px;
+}
