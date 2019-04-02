@@ -54,12 +54,25 @@ class Review extends React.Component {
         formData.append("review[body]", body);
         formData.append("review[author_id]", author_id);
         formData.append("review[business_id]", business_id);
+
+        let fileSize = 0.0;
         if (photos.length !== 0) {
             for (let i = 0; i < photos.length; i++) {
                 formData.append("review[photos][]", photos[i]);
+                fileSize += photos[i].size;
             }
         }
-        this.props.postReview(formData);
+
+        //Conversion from bytes to kilobytes
+        fileSize /= 1000;
+
+        //If less than 1 mB (1000 kB), submit review.
+        if(fileSize < 1000){
+            this.props.postReview(formData);
+        }
+        else{
+            alert("Your files must not exceed 1 mB!")
+        }
     }
 
     handleInput(field) {
