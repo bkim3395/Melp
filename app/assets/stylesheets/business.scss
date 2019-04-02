@@ -227,3 +227,22 @@
     width: 200px;
     height: 200px;
 }
+
+.delete_button{
+    display: flex;
+    justify-content: flex-start;
+}
+
+.delete_button button{
+    text-decoration: none;
+    background-color: transparent;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    color: black;
+    padding: 0;
+    border-radius: 5px;
+    border: 0;
+    margin: 0;
+    margin-bottom: 10px;
+}

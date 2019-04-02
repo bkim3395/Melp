@@ -2,6 +2,7 @@ export const RECEIVE_BUSINESS = "RECEIVE_BUSINESS";
 export const RECEIVE_BUSINESSES = "RECEIVE_BUSINESSES";
 export const RECEIVE_REVIEW = "RECEIVE_REVIEW";
 export const RECEIVE_REVIEWS_ERRORS = "RECEIVE_REVIEWS_ERRORS";
+export const DELETE_REVIEW = "DELETE_REVIEW";
 
 import * as API_B from '../util/api_business';
 
@@ -53,3 +54,14 @@ export const postReview = (formData) => (dispatch) => {
         }
     )
 };
+
+export const deleteReview = (reviewId) => (dispatch) => {
+    return API_B.deleteReview(reviewId).then(
+        () => {
+            return dispatch({
+                type: DELETE_REVIEW,
+                reviewId,
+            })
+        }
+    )
+}

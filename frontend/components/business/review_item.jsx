@@ -1,8 +1,21 @@
 import React from 'react';
+import { deleteReview } from '../../actions/business_actions'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { connect } from 'react-redux';
 
+const msp = (state) => {
+    return({
+        currentUser: state.session.currentUser,
+    })
+}
 
-export default ({review, user}) => {
+const mdp = (dispatch) => {
+    return({
+        deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
+    })
+}
+
+const review_item = ({review, user, deleteReview, currentUser}) => {
 
     //RETRIVING REVIEW PHOTOS///////////
     let reviewImg;
@@ -14,6 +27,15 @@ export default ({review, user}) => {
     }
     ////////////////////////////////////
     
+    let deleteButton;
+
+    if(review.author_id === currentUser){
+        deleteButton = (<div className="delete_button">
+        <               button onClick={() => deleteReview(review.id)}>
+                        <FontAwesomeIcon icon="trash-alt" /></button>
+                        </div>);
+    }
+
     return(<li>
         <div className="review-item">
             <div className="ri-userinfo">
@@ -33,6 +55,7 @@ export default ({review, user}) => {
             <div className="ri-body">
                 <div className={`br-mid-${review.rating}`}></div>
                 <p>{review.body}</p>
+                {deleteButton}
                 <div className="review-imgs">
                     {reviewImg}
                 </div>
@@ -45,3 +68,5 @@ export default ({review, user}) => {
         </div>
     </li>)
 }
+
+export default connect(msp,mdp)(review_item);

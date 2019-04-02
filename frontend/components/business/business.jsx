@@ -115,8 +115,8 @@ class Business extends React.Component{
                             </div>
                             <div className="map-info-website">
                                 <p><FontAwesomeIcon icon="window-restore" />
-                                        <Link to={this.business.website}>
-                                        {this.business.website}</Link>
+                                    <a href={`http://${this.business.website}`}>
+                                    {this.business.website}</a>
                                 </p>
                             </div>
                         </div>
@@ -153,3 +153,6 @@ class Business extends React.Component{
 }
 
 export default connect(msp,mdp)(Business)
+
+    // < Link to = { this.business.website } >
+    //     { this.business.website }</Link >

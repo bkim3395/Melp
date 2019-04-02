@@ -9,6 +9,11 @@ class Api::ReviewsController < ApplicationController
     end
   end
 
+  def destroy
+    @review = current_user.reviews.find(params[:id])
+    @review.destroy
+  end
+
   def reviews_params
       params.require(:review).permit(:author_id, :business_id, :body, :rating, photos: [])
   end

@@ -1,4 +1,4 @@
-import { RECEIVE_BUSINESS, RECEIVE_REVIEW } from
+import { RECEIVE_BUSINESS, RECEIVE_REVIEW, DELETE_REVIEW } from
     '../../actions/business_actions';
 import { merge } from 'lodash';
 
@@ -9,7 +9,11 @@ export default (state = {}, action) => {
             let reviews = action.response.review || {};
             return reviews
         case RECEIVE_REVIEW:
-            return merge({},state,action.review)
+            return merge({}, state, action.review);
+        case DELETE_REVIEW:
+            let newState = merge({}, state);
+            delete newState[action.reviewId];
+            return newState;
         default:
             return state;
     }

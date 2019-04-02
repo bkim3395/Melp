@@ -8,6 +8,13 @@ export const postReview = (formData) => {
     }))
 };
 
+export const deleteReview = (reviewId) => {
+    return ($.ajax({
+        method: "DELETE",
+        url: `/api/reviews/${reviewId}`,
+    }))
+}
+
 export const fetchBusiness = (businessId) => {
     return ($.ajax({
         url: `/api/businesses/${businessId}`,
