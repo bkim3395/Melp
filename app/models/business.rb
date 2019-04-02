@@ -58,7 +58,7 @@ class Business < ApplicationRecord
 
 
         if(arr.length == 2 && arr[1].downcase == "food")
-            # cuisine = arr[0].capitalize;
+            cuisine = arr[0].capitalize;
             return Business.with_attached_photos.where(["cuisine iLIKE ?", cuisine])
         elsif(new_term.downcase.include?("coffee") || new_term.downcase.include?("cafe"))
             return Business.with_attached_photos.where(["cuisine = ?", "Coffee"])

@@ -20,7 +20,8 @@ const mdp = (dispatch) => {
 class Search extends React.Component{
 
     constructor(props){
-        super(props)
+        super(props);    
+        this.searchWords = props.history.location.search.slice(1);
     }
 
     componentDidMount(){
@@ -33,14 +34,41 @@ class Search extends React.Component{
             return <BusinessItem business={business} key={business.id} />
         })
 
+        if(this.searchWords.includes("%20")){
+            let arr = this.searchWords.split("%20");
+            this.searchWords = arr.join(" ");
+        }
+
+
+
+        let bestPlace = "Places"
+        if(this.props.history.location.search){
+            bestPlace = this.searchWords;
+        }
+
         return(
             <>
+        
             <InputHeader />
-            <div className="search-container">
-                <ul className="search-results">
-                    {businesses}
-                </ul>
+
+            <div className="search-header">
+                <div className="search-header-text">
+                    <p>Best {bestPlace}</p><p> in your area!</p>
+                </div>
             </div>
+
+                <div className="search-page">
+                    <div className="search-container">
+                        <ul className="search-results">
+                                {businesses}
+                        </ul>
+                    </div>
+
+                    <div className="search-map"></div>
+
+                </div>
+
+
             </>
         );
 
