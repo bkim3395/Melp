@@ -6,10 +6,12 @@ export default ({review, user}) => {
 
     //RETRIVING REVIEW PHOTOS///////////
     let reviewImg;
-    if(review.photoUrls.length !== 0){
-    reviewImg = review.photoUrls.map((photo, idx) => {
-        return(<img key={idx}  src={photo} />)
-    })}
+    if(review.photoUrls){
+        if(review.photoUrls.length !== 0){
+        reviewImg = review.photoUrls.map((photo, idx) => {
+            return(<img key={idx}  src={photo} />)
+        })}
+    }
     ////////////////////////////////////
     
     return(<li>
