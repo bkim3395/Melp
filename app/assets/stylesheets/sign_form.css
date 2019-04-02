@@ -48,7 +48,7 @@
     padding: 0 15px;
 }
 
-.authForm fieldset{
+.sign-form fieldset{
     margin: 20px 0;
     border: none;
     border-top: 1px solid #cccccc;
@@ -57,7 +57,7 @@
     width: 304px;
 }
 
-.authForm legend{
+.sign-form legend{
     font-size: 13m;
     padding: 0 15px;
     margin: 0 auto;

@@ -77,9 +77,9 @@ class SessionForm extends React.Component {
                 <div className="sign-form">
                     <h1>{this.props.formType}</h1>
                     {redirect}
-                    <form onSubmit={this.handleSubmit} className="authForm">
                         {demoButton}
                         {divider}
+                        <form onSubmit={this.handleSubmit} className="authForm">
                         {nameBox}
                         <label>
                             <input type="text" value={this.state.email}
