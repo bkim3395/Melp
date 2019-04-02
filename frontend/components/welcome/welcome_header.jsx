@@ -3,17 +3,31 @@ import { Link, withRouter } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
+
+
 class WelcomeHeader extends React.Component{
 
     constructor(props){
         super(props);
+        this.state = {
+            searchTerm: "",
+        }
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleUpdate = this.handleUpdate.bind(this);
     }
 
     handleSubmit(event){
         event.preventDefault();
-        this.props.history.push("/search")
+        const searchTerm = this.state.searchTerm;
+        this.props.history.push({
+            pathname: "/search",
+            search: searchTerm,
+        })
     }
+
+    handleUpdate(e){
+        this.setState({searchTerm: e.target.value});
+    };
 
     render(){
 
@@ -37,7 +51,8 @@ class WelcomeHeader extends React.Component{
             <form className="search-form" onSubmit={this.handleSubmit}>
             <label className="search-wrapper">
             <span className="search-prefix">Find</span>
-            <input placeholder="Korean food, Indian food, etc..." type="text"   
+            <input placeholder="Korean food, Indian food, etc..." type="text"
+                    onChange={this.handleUpdate}   
                    className="search-box"/>
             </label>
             <button className="search-submit" type="submit">

@@ -13,7 +13,7 @@ const msp = (state) => {
 
 const mdp = (dispatch) => {
     return({
-        fetchBusinesses: () => dispatch(fetchBusinesses()),
+        fetchBusinesses: (searchTerm) => dispatch(fetchBusinesses(searchTerm)),
     });
 }
 
@@ -24,7 +24,8 @@ class Search extends React.Component{
     }
 
     componentDidMount(){
-        this.props.fetchBusinesses();
+        const searchTerm = this.props.history.location.search.slice(1);
+        this.props.fetchBusinesses(searchTerm);
     }
 
     render(){

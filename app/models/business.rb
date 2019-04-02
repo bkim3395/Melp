@@ -46,4 +46,43 @@ class Business < ApplicationRecord
     
     end
 
+    def self.search(term)
+
+        if(term.include?("%20"))
+            arr = term.split("%20")
+        else
+            arr = term.split(" ")
+        end
+
+        new_term = arr.join(" ")
+
+
+        if(arr.length == 2 && arr[1].downcase == "food")
+            # cuisine = arr[0].capitalize;
+            return Business.with_attached_photos.where(["cuisine iLIKE ?", cuisine])
+        elsif(new_term.downcase.include?("coffee") || new_term.downcase.include?("cafe"))
+            return Business.with_attached_photos.where(["cuisine = ?", "Coffee"])
+        else
+            result = Business.with_attached_photos.where("LOWER(name) LIKE ?", "%#{new_term.downcase}%" )
+            if(result.length == 0 && arr.length == 1)
+                return Business.with_attached_photos.where(["cuisine iLIKE ?", new_term])
+            end
+            return result
+        end    
+    end
 end
+
+
+    # LIKE is case sensative! 
+    # We could have done: Business.with_attached_photos.all.where("name iLIKE ?", "%#{new_term}%")
+
+
+    # Controller:
+    # @benches = Bench.in_bounds(params[:bounds])
+
+    # Model:
+    # Bench.all.where([
+    #   "(lat BETWEEN ? AND ?) AND (lng BETWEEN ? AND ?)",
+    #     bounds[:southWest][:lat] ,bounds[:northEast][:lat],
+    #     bounds[:southWest][:lng] ,bounds[:northEast][:lng]
+    # ])

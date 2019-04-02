@@ -23,9 +23,10 @@ export const fetchBusiness = (businessId) => {
 };
 
 
-export const fetchBusinesses = () => {
+export const fetchBusinesses = (search) => {
     return ($.ajax({
         url: '/api/businesses',
         method: "GET",
+        data: { search, }
     }))
 };
