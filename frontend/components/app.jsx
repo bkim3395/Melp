@@ -8,7 +8,7 @@ import Footer from './footer/footer'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faSearch, faStar, faMapMarkerAlt, faPhone, faWindowRestore } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faStar, faMapMarkerAlt, faPhone, faWindowRestore, faCamera } from '@fortawesome/free-solid-svg-icons'
 import Search from './search/search'
 import { Switch } from 'react-router-dom'
 import Business from './business/business'
@@ -16,7 +16,7 @@ import Review from './business/review'
 
 
 export default (props) => {
-    library.add(fab, faSearch, faStar, faMapMarkerAlt, faPhone, faWindowRestore);
+    library.add(fab, faSearch, faStar, faMapMarkerAlt, faPhone, faWindowRestore, faCamera);
     return(
         <>
         <Switch>

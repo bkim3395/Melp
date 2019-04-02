@@ -129,14 +129,14 @@ class Business extends React.Component{
 
 
             <div className="business-reviews">
-            <ul>
+                <ul>
                 {reviews}
-            </ul>
+                </ul>
             </div>
 
 
 
-            
+
         </>)
         }
         ///////////////////////////////////////////////////////////////////

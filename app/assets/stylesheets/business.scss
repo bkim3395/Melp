@@ -148,3 +148,82 @@
 .bh-images-list img:hover{
     transform: scale(1.2);
 }
+
+//////////////////////////
+
+.business-reviews{
+    display: flex;
+    flex-direction: column;
+    margin: 0 15%;
+}
+
+.business-reviews ul{
+    width:100%;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.review-item{
+    display: flex;
+    align-items: flex-start;
+    min-width: 800px;
+    padding: 10px 0;
+    margin: 20px 0;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.ri-userinfo{
+    display: flex;
+    width: 250px;
+    height: 60px;
+    align-items: center;
+    // margin-right: 100px;
+}
+
+.ri-userinfo svg{
+    background-color: #e1652a;
+    border-radius: 2px;
+    color: white;
+    padding: 3px;
+    font-size: 8px !important;
+    margin-right: 6px;
+}
+
+.ri-userinfo p{
+    margin: 0;
+}
+
+.profile-img{
+    width: 60px;
+    height: 60px;
+    margin-right: 25px;
+}
+
+.profile-name{
+    color: #0073bb;
+    font-weight: 600;
+}
+
+.profile-small{
+    font-size: 14px;
+}
+
+.ri-body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+}
+
+.review-imgs{
+    display: flex;
+    width: 600px;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+}
+
+.review-imgs img{
+    width: 200px;
+    height: 200px;
+}

@@ -92,4 +92,12 @@ class User < ApplicationRecord
         self.photo.attach(io: avatar[0], filename: avatar[1])
         return self.photo.attached?
     end
+
+    def photos_count
+        sum = 0
+        self.reviews.each do |review|
+            sum += review.photos.length
+        end
+        return sum
+    end
 end
