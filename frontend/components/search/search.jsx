@@ -20,8 +20,10 @@ const mdp = (dispatch) => {
 class Search extends React.Component{
 
     constructor(props){
-        super(props);    
-        this.searchWords = props.history.location.search.slice(1);
+        super(props);
+        this.state = {
+            searchWords: props.history.location.search.slice(1),
+        }
     }
 
     componentDidMount(){
@@ -29,22 +31,30 @@ class Search extends React.Component{
         this.props.fetchBusinesses(searchTerm);
     }
 
+    componentDidUpdate(){
+        debugger;
+    }
+
     render(){
-        const businesses = this.props.businesses.map((business) => {
-            return <BusinessItem business={business} key={business.id} />
-        })
 
-        if(this.searchWords.includes("%20")){
-            let arr = this.searchWords.split("%20");
-            this.searchWords = arr.join(" ");
+        if(this.state.searchWords.includes("%20")){
+            let arr = this.state.searchWords.split("%20");
+            this.state.searchWords = arr.join(" ");
         }
-
-
 
         let bestPlace = "Places"
         if(this.props.history.location.search){
             bestPlace = this.searchWords;
         }
+
+
+        const businesses = this.props.businesses.map((business) => {
+            return <BusinessItem business={business}
+                fetchBusinesses={this.props.fetchBusinesses}
+                searchWords={this.state.searchWords}
+                key={business.id} />
+        })
+
 
         return(
             <>

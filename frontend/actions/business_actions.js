@@ -7,10 +7,12 @@ export const DELETE_REVIEW = "DELETE_REVIEW";
 import * as API_B from '../util/api_business';
 
 export const receiveBusinesses = (business) => 
-                    ({
+                    {
+                        return({
                         type: RECEIVE_BUSINESSES,
                         business,
-                     });
+                        })
+                    };
 
 export const receiveBusiness = (response) => 
                      ({
