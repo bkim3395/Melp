@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import { fetchBusiness } from '../../actions/business_actions'
-import InputHeader from '../header/input_header'
+import MainHeader from '../header/main_header'
 import ReviewItem from './review_item'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -24,6 +24,11 @@ const mdp = (dispatch) => {
 
 class Business extends React.Component{
 
+    constructor(props){
+        super(props);
+        this.handleCuisineRedirect = this.handleCuisineRedirect.bind(this);
+    }
+
     //Deals with Rendering the page -> Fetch business after first render
     //Update makes sure that, if move to another business page directly,
     //correct business is fetched.
@@ -37,8 +42,17 @@ class Business extends React.Component{
         }
     }
     //////////////////////////////////////////////////////////////////////////
-    render(){
 
+    handleCuisineRedirect(){
+        this.props.history.push({
+            pathname: "/search",
+            search: this.business.cuisine,
+        })
+    }
+
+    //////////////////////////////////////////////////////////////////////////
+    render(){
+        
         //For easy access//
         this.businessId = this.props.match.params.businessId;
         this.business = this.props.business;
@@ -69,6 +83,7 @@ class Business extends React.Component{
         })
         /////////////////////////////////////////
 
+
         //ACTUAL RENDERING////////////////////////////////////////////////////
         if(this.business) {
             const businessImg = this.business.photoUrls.map((photo, idx) => {
@@ -79,8 +94,15 @@ class Business extends React.Component{
             let address1 = location[0];
             let address2 = location[1].concat(', ',location[2]);
 
+
+            //Generating Cuisine Redirect//
+            const cuisineLink = (<p className ="cuisineLink" 
+                onClick={this.handleCuisineRedirect}><span>{this.business.cuisine}</span>
+                </p>)
+            ///////////////////////////////
+
             return(<>
-            <InputHeader />
+            <MainHeader />
             <div className="business-header">
 
                 <div className="bh-info">
@@ -90,7 +112,7 @@ class Business extends React.Component{
                             <div className={`br-big-${this.business.rating}`}></div>
                             <p>{`${this.business.reviews_count} reviews`}</p>
                         </div>
-                            <p>{this.business.cuisine}</p>
+                            {cuisineLink}
                     </div>
                     <div className="bh-info-review">
                         {reviewLink}
@@ -143,7 +165,7 @@ class Business extends React.Component{
         //If Business hasn't loaded yet and is first rendering//
         else{
             return (<>
-                <InputHeader />
+                <MainHeader />
                 <p>Stand By...</p>
             </>)
         }

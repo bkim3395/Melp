@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { fetchBusinesses } 
 from '../../actions/business_actions';
 import BusinessItem from './business_item';
-import InputHeader from '../header/input_header'
+import MainHeader from '../header/main_header'
 
 const msp = (state) => {
     return({
@@ -23,6 +23,7 @@ class Search extends React.Component{
         super(props);
         this.state = {
             searchWords: props.history.location.search.slice(1),
+            haveUpdatedOnce: false,
         }
     }
 
@@ -31,9 +32,15 @@ class Search extends React.Component{
         this.props.fetchBusinesses(searchTerm);
     }
 
-    componentDidUpdate(){
-        debugger;
-    }
+    // componentDidUpdate(){
+    //     debugger;
+    //     if(!this.state.haveUpdatedOnce){
+    //         this.setState({
+    //             searchWords: this.props.businesses[0].cuisine,
+    //             haveUpdatedOnce: true
+    //         });
+    //     }
+    // }
 
     render(){
 
@@ -44,7 +51,7 @@ class Search extends React.Component{
 
         let bestPlace = "Places"
         if(this.props.history.location.search){
-            bestPlace = this.searchWords;
+            bestPlace = this.state.searchWords;
         }
 
 
@@ -59,7 +66,7 @@ class Search extends React.Component{
         return(
             <>
         
-            <InputHeader />
+            <MainHeader />
 
             <div className="search-header">
                 <div className="search-header-text">

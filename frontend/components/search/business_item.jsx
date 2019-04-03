@@ -38,16 +38,6 @@ const businessItem = ({ business, searchWords, fetchBusinesses }) => {
                         <span>{business.cuisine}</span></a>)
 
 
-
-
-    // History.push()
-
-    // const cuisineLink = (<Link
-    //     to={{
-    //         pathname: '/search',
-    //         search: searchWords,
-    //     }}>{business.cuisine}</Link>);
-
     let location = business.address.split(', ');
     let address1 = location[0];
     let address2 = location[1].concat(', ', location[2]);
