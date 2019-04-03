@@ -4,7 +4,6 @@
     <title>Melp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
     <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Mono" rel="stylesheet">
@@ -26,9 +25,9 @@
     window.smallLogoURL = "<%= image_url('small_logo.png') %>"
     window.starInputURL = "<%= image_url('star_input.png') %>"
     window.starOutputURL = "<%= image_url('star_output.png') %>"
-
     </script>
     <%= favicon_link_tag asset_path('favicon.png') %>
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{Rails.application.credentials.google[:api_key]}" %>
   </head>
 
   <body>

@@ -4,10 +4,12 @@ import { fetchBusinesses }
 from '../../actions/business_actions';
 import BusinessItem from './business_item';
 import MainHeader from '../header/main_header'
+import SearchMap from './search_map'
 
 const msp = (state) => {
     return({
         businesses: Object.values(state.entities.businesses),
+        currentUser: state.entities.users[state.session.currentUser],
     })
 }
 
@@ -81,7 +83,10 @@ class Search extends React.Component{
                         </ul>
                     </div>
 
-                    <div className="search-map"></div>
+                    <div className="search-map">
+                    <SearchMap businesses={this.props.businesses}
+                            currentUser={this.props.currentUser} />
+                    </div>
 
                 </div>
 
