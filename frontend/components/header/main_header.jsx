@@ -13,7 +13,6 @@ const msp = (state) => {
 
 const mdp = (dispatch) => {
     return ({
-        fetchBusinesses: (searchTerm) => dispatch(fetchBusinesses(searchTerm)),
         logout: () => { return dispatch(logout()) },
     });
 }
@@ -42,7 +41,6 @@ class MainHeader extends React.Component{
             let arr = searchTerm.split(" ");
             let str = arr.join("%20")
             this.props.history.push(`/search?${str}`)
-            // this.props.fetchBusinesses(searchTerm)
         }
     }
 
