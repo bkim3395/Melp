@@ -25,12 +25,12 @@ class Search extends React.Component{
         super(props);
         this.state = {
             searchWords: props.history.location.search.slice(1),
-            haveUpdatedOnce: false,
         }
     }
 
     componentDidMount(){
         const searchTerm = this.props.history.location.search.slice(1);
+        debugger
         this.props.fetchBusinesses(searchTerm);
     }
 
@@ -43,23 +43,38 @@ class Search extends React.Component{
     //     }
     // }
 
+    componentDidUpdate(){
+        if(this.state.searchWords !== this.props.history.location.search.slice(1)){
+            this.props.fetchBusinesses(this.props.history.location.search.slice(1));
+            this.setState({ searchWords: this.props.history.location.search.slice(1)});
+        }
+    }
+
+    // static getDerivedStateFromProps(nextProps, prevState){
+    //     return({
+    //         searchWords: nextProps.history.location.search
+    //     })
+    // }
+
     render(){
 
-        if(this.state.searchWords.includes("%20")){
-            let arr = this.state.searchWords.split("%20");
-            this.state.searchWords = arr.join(" ");
+        let searchWords = this.state.searchWords;
+        
+        if(searchWords.includes("%20")){
+            let arr = searchWords.split("%20");
+            searchWords = arr.join(" ");
         }
 
         let bestPlace = "Places"
         if(this.props.history.location.search){
-            bestPlace = this.state.searchWords;
+            bestPlace = searchWords;
         }
 
 
         const businesses = this.props.businesses.map((business) => {
             return <BusinessItem business={business}
                 fetchBusinesses={this.props.fetchBusinesses}
-                searchWords={this.state.searchWords}
+                searchWords={searchWords}
                 key={business.id} />
         })
 

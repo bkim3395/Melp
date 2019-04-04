@@ -39,7 +39,10 @@ class MainHeader extends React.Component{
             });
         }
         else{
-            this.props.fetchBusinesses(searchTerm)
+            let arr = searchTerm.split(" ");
+            let str = arr.join("%20")
+            this.props.history.push(`/search?${str}`)
+            // this.props.fetchBusinesses(searchTerm)
         }
     }
 

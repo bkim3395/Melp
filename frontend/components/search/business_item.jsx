@@ -1,7 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
-const businessItem = ({ business, searchWords, fetchBusinesses }) => {
+const businessItem = ({ business, searchWords, history }) => {
 
     const img = (<img src={business.photoUrls[0]} />)
 
@@ -34,7 +34,7 @@ const businessItem = ({ business, searchWords, fetchBusinesses }) => {
         }}><span>{business.name}</span></Link>);
 
     
-    const cuisineLink = (<a onClick={() => {fetchBusinesses(business.cuisine)}}>
+    const cuisineLink = (<a onClick={() => {history.push(`/search?${business.cuisine}`)}}>
                         <span>{business.cuisine}</span></a>)
 
 
@@ -42,6 +42,7 @@ const businessItem = ({ business, searchWords, fetchBusinesses }) => {
     let address1 = location[0];
     let address2 = location[1].concat(', ', location[2]);
     const address = (<><p>{address1}</p><p>{address2}</p></>);
+
 
     return (
         <div className="business-item">
@@ -68,4 +69,4 @@ const businessItem = ({ business, searchWords, fetchBusinesses }) => {
     );
 }
 
-export default businessItem;
+export default withRouter(businessItem);
