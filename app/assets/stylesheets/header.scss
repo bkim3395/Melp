@@ -66,7 +66,7 @@
     #mh-logout{
         background:none;
         cursor: pointer;
-        width: 40px;
+        width: 50px;
         height: 11px;
         background-color: white;
         padding: 12px;
@@ -76,7 +76,7 @@
         color: black;
         text-decoration: none;
         font-weight: 600;
-        border-radius: 4px;
+        border-radius: 5px;
         box-sizing: content-box;
     }
 
@@ -85,13 +85,13 @@
         height: 11px;
         background: #BD1F1F;
         padding: 12px;
-        margin-right: 0;
+        margin-right: 10px;
         border: 1px solid #bd1f1f;
         font-size: 13px;
         color: white;
         text-decoration: none;
         font-weight: 600;
-        border-radius: 4px;
+        border-radius: 5px;
     }
 
     #mh-login:hover{
@@ -104,12 +104,12 @@
         background-color: white;
         padding: 12px;
         margin-right: 0;
-        border: 1px solid #bd1f1f;
+        // border: 1px solid #bd1f1f;
         font-size: 13px;
         color: black;
         text-decoration: none;
         font-weight: 600;
-        border-radius: 4px;
+        border-radius: 5px;
     }
     
 }

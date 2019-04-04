@@ -6,11 +6,12 @@
     height: 100px;
     margin-bottom: 20px;
     display: flex;
+    justify-content: center;
     align-items: center;    
 }
 
 .search-header-text{
-    width: 80%;
+    width: 60%;
     margin: 0 10%;
     font-size: 25px;
     display: flex;
@@ -24,13 +25,13 @@
 
 
 .search-page{
-    width: 80%;
-    margin: 0 10%;
-    min-width: 1000px;
+    width: 60%;
+    margin: 0 auto;
+    // min-width: 1000px;
     // height: 5000px;
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: space-around;
     flex-wrap: nowrap;
     margin-bottom: 50px;
 }

@@ -70,11 +70,13 @@ class MainHeader extends React.Component{
     let credentials;
 
     if(this.props.currentUser){
-        credentials = <button id="mh-logout" onClick={this.props.logout}>Logout</button>
+        credentials = (<div className="mh-credentials">
+            <button id="mh-logout" onClick={this.props.logout}>Logout</button>
+            </div>);
     }
     else{
-        credentials = (<><Link to="/login" id="mh-login">Log In</Link>
-            <Link to="/signup" id="mh-signup">Sign Up</Link></>)
+        credentials = (<div className="mh-credentials"><Link to="/login" id="mh-login">Log In</Link>
+            <Link to="/signup" id="mh-signup">Sign Up</Link></div>)
     }
 
 

@@ -148,9 +148,10 @@ class Review extends React.Component {
         }
 
 
-        return (
-            <>
+        return (<>
                 <InputHeader />
+            <div className="review-complete-wrapper-wrapper">
+                <div class="review-complete-wrapper">
                 <div className="businessNameWrap">{businessLink}</div>
                 <form className="review-form" onSubmit={this.handleSubmit}>
                     <div className="review-form-input">
@@ -209,7 +210,9 @@ class Review extends React.Component {
                     </div>
                 </form>
                 <ul>{errors}</ul>
-            </>
+            </div>
+            </div>
+        </>
         )
     }
 }
