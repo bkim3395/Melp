@@ -28,6 +28,9 @@ longitude: -73.983927)
 User.create(email: "reviewer4@gmail.com", first_name: "Yuna", last_name: "Kim", password: "password", latitude: 40.751369,
 longitude: -73.983927)
 
+User.create(email: "reviewer5@gmail.com", first_name: "Nuull", last_name: "Kim", password: "password", latitude: 40.760260,
+longitude: -73.769484)
+
 User.all.each do |user|
     user.assign_avatar
 end
