@@ -30,11 +30,10 @@ class Search extends React.Component{
         }
     }
 
-    componentDidMount(){
-        const searchTerm = this.props.history.location.search.slice(1);
-        debugger
-        this.props.fetchBusinesses(searchTerm);
-    }
+    // componentDidMount(){
+    //     const searchTerm = this.props.history.location.search.slice(1);
+    //     this.props.fetchBusinesses(searchTerm);
+    // }
 
     // componentDidUpdate(){
     //     if(!this.state.haveUpdatedOnce){
