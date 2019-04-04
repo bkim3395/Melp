@@ -23,10 +23,11 @@ export const fetchBusiness = (businessId) => {
 };
 
 
-export const fetchBusinesses = (search) => {
+export const fetchBusinesses = (search, bounds) => {
     return ($.ajax({
         url: '/api/businesses',
         method: "GET",
-        data: { search, }
+        data: { search,
+                bounds, }
     }))
 };

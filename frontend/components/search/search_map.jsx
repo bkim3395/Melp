@@ -27,14 +27,14 @@ class SearchMap extends React.Component{
     this.map = new google.maps.Map(this.mapNode, mapOptions);
     this.MarkerManager = new MarkerManager(this.map);
     this.MarkerManager.updateMarkers(this.props.businesses);
-    // this.map.addListener('idle', () => {
-    // const bounds = {"northEast": {lat: this.map.getBounds().getNorthEast().lat(),
-    //                               lng: this.map.getBounds().getNorthEast().lng()},
-    //                  "southWest": {lat: this.map.getBounds().getSouthWest().lat(),
-    //                               lng: this.map.getBounds().getSouthWest().lng(),}
-    //                  };
-    // this.props.updateBounds(bounds);
-    // });
+    this.map.addListener('idle', () => {
+    const bounds = {"northEast": {lat: this.map.getBounds().getNorthEast().lat(),
+                                  lng: this.map.getBounds().getNorthEast().lng()},
+                     "southWest": {lat: this.map.getBounds().getSouthWest().lat(),
+                                  lng: this.map.getBounds().getSouthWest().lng(),}
+                     };
+    this.props.updateBounds(this.props.searchWords, bounds);
+    });
   
   }
 

@@ -34,8 +34,8 @@ export const receiveReviewErrors = (errors) =>{
                     
 
 
-export const fetchBusinesses = (searchTerm) => (dispatch) => {
-    return API_B.fetchBusinesses(searchTerm).then((business) => {
+export const fetchBusinesses = (searchTerm, bounds) => (dispatch) => {
+    return API_B.fetchBusinesses(searchTerm, bounds).then((business) => {
         dispatch(receiveBusinesses(business));
     })
 };

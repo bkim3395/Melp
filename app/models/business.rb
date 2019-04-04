@@ -46,6 +46,43 @@ class Business < ApplicationRecord
     
     end
 
+    def self.bounds_search(term, bounds)
+
+        if(term.include?("%20"))
+            arr = term.split("%20")
+        else
+            arr = term.split(" ")
+        end
+
+        new_term = arr.join(" ")
+
+
+        if(arr.length == 2 && arr[1].downcase == "food")
+            cuisine = arr[0].capitalize;
+            return Business.with_attached_photos.where(["cuisine iLIKE ? AND (latitude BETWEEN ? AND ?) AND (longitude BETWEEN ? AND ?)", 
+                                                        cuisine,
+                                                        bounds[:southWest][:lat] ,bounds[:northEast][:lat],
+                                                        bounds[:southWest][:lng] ,bounds[:northEast][:lng]])
+        elsif(new_term.downcase.include?("coffee") || new_term.downcase.include?("cafe"))
+            return Business.with_attached_photos.where(["cuisine = ? AND (latitude BETWEEN ? AND ?) AND (longitude BETWEEN ? AND ?)", 
+                                                        "Coffee",
+                                                        bounds[:southWest][:lat] ,bounds[:northEast][:lat],
+                                                        bounds[:southWest][:lng] ,bounds[:northEast][:lng]])
+        else
+            result = Business.with_attached_photos.where(["LOWER(name) LIKE ? AND (latitude BETWEEN ? AND ?) AND (longitude BETWEEN ? AND ?)",
+                                                         "%#{new_term.downcase}%",
+                                                        bounds[:southWest][:lat] ,bounds[:northEast][:lat],
+                                                        bounds[:southWest][:lng] ,bounds[:northEast][:lng]])
+            if(result.length == 0 && arr.length == 1)
+                return Business.with_attached_photos.where(["cuisine iLIKE ? AND (latitude BETWEEN ? AND ?) AND (longitude BETWEEN ? AND ?)", 
+                                                            new_term,  
+                                                            bounds[:southWest][:lat] ,bounds[:northEast][:lat],
+                                                            bounds[:southWest][:lng] ,bounds[:northEast][:lng]])
+            end
+            return result
+        end    
+    end
+
     def self.search(term)
 
         if(term.include?("%20"))
@@ -70,6 +107,7 @@ class Business < ApplicationRecord
             return result
         end    
     end
+
 end
 
 
@@ -86,3 +124,28 @@ end
     #     bounds[:southWest][:lat] ,bounds[:northEast][:lat],
     #     bounds[:southWest][:lng] ,bounds[:northEast][:lng]
     # ])
+
+    # def self.search(term)
+
+    #     if(term.include?("%20"))
+    #         arr = term.split("%20")
+    #     else
+    #         arr = term.split(" ")
+    #     end
+
+    #     new_term = arr.join(" ")
+
+
+    #     if(arr.length == 2 && arr[1].downcase == "food")
+    #         cuisine = arr[0].capitalize;
+    #         return Business.with_attached_photos.where(["cuisine iLIKE ?", cuisine])
+    #     elsif(new_term.downcase.include?("coffee") || new_term.downcase.include?("cafe"))
+    #         return Business.with_attached_photos.where(["cuisine = ?", "Coffee"])
+    #     else
+    #         result = Business.with_attached_photos.where("LOWER(name) LIKE ?", "%#{new_term.downcase}%" )
+    #         if(result.length == 0 && arr.length == 1)
+    #             return Business.with_attached_photos.where(["cuisine iLIKE ?", new_term])
+    #         end
+    #         return result
+    #     end    
+    # end

@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux';
 import { fetchBusinesses } 
 from '../../actions/business_actions';
+import {updateBounds} from '../../actions/filter_actions'
 import BusinessItem from './business_item';
 import MainHeader from '../header/main_header'
 import SearchMap from './search_map'
@@ -16,6 +17,7 @@ const msp = (state) => {
 const mdp = (dispatch) => {
     return({
         fetchBusinesses: (searchTerm) => dispatch(fetchBusinesses(searchTerm)),
+        updateBounds: (searchWords, bounds) => dispatch(updateBounds(searchWords, bounds)),
     });
 }
 
@@ -99,7 +101,9 @@ class Search extends React.Component{
 
                     <div className="search-map">
                     <SearchMap businesses={this.props.businesses}
-                            currentUser={this.props.currentUser} />
+                            currentUser={this.props.currentUser}
+                            updateBounds={this.props.updateBounds}
+                            searchWords={searchWords} />
                     </div>
 
                 </div>
