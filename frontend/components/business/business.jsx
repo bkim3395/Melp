@@ -5,6 +5,7 @@ import MainHeader from '../header/main_header'
 import ReviewItem from './review_item'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import BusinessMap from './business_map'
 
 
 const msp = (state,ownProps) => {
@@ -124,7 +125,9 @@ class Business extends React.Component{
 
                 <div className="bh-images">
                     <div className="map-container">
-                        <div className="businessMap"></div>
+                        <div className="businessMap">
+                            <BusinessMap business={this.business} />
+                        </div>
                         <div className="map-info">
                             <div className="map-info-address">
                                 <p><FontAwesomeIcon icon="map-marker-alt" />

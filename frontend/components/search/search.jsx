@@ -35,7 +35,6 @@ class Search extends React.Component{
     }
 
     // componentDidUpdate(){
-    //     debugger;
     //     if(!this.state.haveUpdatedOnce){
     //         this.setState({
     //             searchWords: this.props.businesses[0].cuisine,

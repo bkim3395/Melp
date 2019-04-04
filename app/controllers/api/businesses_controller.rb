@@ -1,7 +1,7 @@
 class Api::BusinessesController < ApplicationController
 
   def index
-    @businesses = Business.search(params[:search]) || Business.with_attached_photos.all
+    @businesses = Business.search(params[:search])
     render :index
   end
 

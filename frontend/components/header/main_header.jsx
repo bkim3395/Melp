@@ -2,10 +2,19 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
 import { connect } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { logout } from '../../actions/session_actions';
+
+
+const msp = (state) => {
+    return({
+        currentUser: state.session.currentUser,
+    })
+}
 
 const mdp = (dispatch) => {
     return ({
         fetchBusinesses: (searchTerm) => dispatch(fetchBusinesses(searchTerm)),
+        logout: () => { return dispatch(logout()) },
     });
 }
 
@@ -58,16 +67,28 @@ class MainHeader extends React.Component{
         </form>
         );
 
+    let credentials;
+
+    if(this.props.currentUser){
+        credentials = <button id="mh-logout" onClick={this.props.logout}>Logout</button>
+    }
+    else{
+        credentials = (<><Link to="/login" id="mh-login">Log In</Link>
+            <Link to="/signup" id="mh-signup">Sign Up</Link></>)
+    }
+
+
     return (
         <div className="main-header">
             <div className="mh-container">
                 <Link to="/"><p>Melp</p>
                 </Link>
                 {searchForm}
+                {credentials}
             </div>
         </div>
         );
     }
 }
 
-export default withRouter(connect(null, mdp)(MainHeader));
+export default withRouter(connect(msp, mdp)(MainHeader));
