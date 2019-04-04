@@ -10,7 +10,7 @@ class Api::BusinessesController < ApplicationController
   end
 
   def show
-    @business = Businesboundss.with_attached_photos.find_by(id: params[:id])
+    @business = Business.with_attached_photos.find_by(id: params[:id])
     @reviews = @business.reviews.with_attached_photos
     render :show
   end
