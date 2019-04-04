@@ -8,8 +8,8 @@ class Api::UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     # Manually feeding same position (App Academy) for now.
-    @user.update(latitude: 40.751369, longitude: -73.983927)
-
+    # @user.update(latitude: 40.751369, longitude: -73.983927)
+    debugger
     if @user.save
       @user.assign_avatar
       login_user(@user)
@@ -20,7 +20,7 @@ class Api::UsersController < ApplicationController
   end
 
   def user_params
-      params.require(:user).permit(:first_name, :last_name, :password, :email, :photo)
+      params.require(:user).permit(:first_name, :last_name, :password, :email, :photo, :longitude, :latitude)
   end
 
 

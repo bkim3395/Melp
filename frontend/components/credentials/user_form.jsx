@@ -51,8 +51,13 @@ class SessionForm extends React.Component {
                 <input type="text" value={this.state.last_name}
                     onChange={this.handleInput("last_name")} placeholder="Last Name" />
             </label></div>)
+
             redirect = (<p id="credential-redirect">Already a member? 
              <Link to="/login" className="cr-link">Log In</Link></p>)
+
+            // navigator.geolocation.getCurrentPosition((position) => {
+            //     this.setState({latitude: position.coords.latitude, longitude: position.coords.longitude});
+            // });
         }
 
         else{
@@ -70,6 +75,7 @@ class SessionForm extends React.Component {
         }
 
 
+        debugger
         return (
             <>
             <InputHeader />
