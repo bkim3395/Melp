@@ -24,7 +24,10 @@ class SessionForm extends React.Component {
 
     handleSubmit(event) {
         event.preventDefault();
-        this.props.processForm(this.state);
+        let submitForm = this.state;
+        submitForm["latitude"] = this.props.geoLat;
+        submitForm["longitude"] = this.props.geoLng;
+        this.props.processForm(submitForm);
     }
 
     handleDemo(event){
@@ -43,6 +46,9 @@ class SessionForm extends React.Component {
         let redirect;
 
         if(this.props.formType === "Sign Up"){
+
+            const that = this;
+
             nameBox = (<div className="name-form"><label>
             <input type="text" value={this.state.first_name} 
             onChange={this.handleInput("first_name")} placeholder="First Name" />
@@ -54,10 +60,13 @@ class SessionForm extends React.Component {
 
             redirect = (<p id="credential-redirect">Already a member? 
              <Link to="/login" className="cr-link">Log In</Link></p>)
+            
+            if(!this.props.geoExists){
 
-            // navigator.geolocation.getCurrentPosition((position) => {
-            //     this.setState({latitude: position.coords.latitude, longitude: position.coords.longitude});
-            // });
+                navigator.geolocation.getCurrentPosition((position) => {
+                    that.props.receiveGeolocation(position.coords.latitude, position.coords.longitude);
+                });
+             }
         }
 
         else{
@@ -74,8 +83,6 @@ class SessionForm extends React.Component {
             <Link to="/signup" className="cr-link">Sign Up</Link></p>)
         }
 
-
-        debugger
         return (
             <>
             <InputHeader />
