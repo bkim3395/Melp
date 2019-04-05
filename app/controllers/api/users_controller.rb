@@ -9,6 +9,7 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     # Manually feeding same position (App Academy) for now.
     # @user.update(latitude: 40.751369, longitude: -73.983927)
+    debugger
     if @user.save
       @user.assign_avatar
       login_user(@user)
