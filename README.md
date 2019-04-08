@@ -1,31 +1,9 @@
-# README
+<p align="center">
+  <img width="400" height="400" src="https://raw.githubusercontent.com/bkim3395/Melp/master/app/assets/images/new_logo.png">
+</p>
 
-git log --graph --oneline --branches
+# Melp
 
-Comment and Index stars are medium stars.
+[Melp Live](https://melp-yelp-clone.herokuapp.com/#/)
 
-Errors: http://localhost:3000/?rating=3#/business/68
-
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Melp is a Yelp clone. You can browse restaurants in your local area, look up information about specific businesses, including photos of the business, and submit a review optionally with pictures. This clone has been programmed in Ruby on Rails, Javascript, React and Redux.
