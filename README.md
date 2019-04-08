@@ -6,7 +6,7 @@
 
 [Melp Live](https://melp-yelp-clone.herokuapp.com/#/)
 
-Melp is a Yelp clone. You can browse restaurants in your local area, look up information about specific businesses, including photos of the business, and submit a review optionally with pictures.
+Melp is a Yelp clone. User can browse restaurants in their local area, look up information about specific business and submit a review optionally with pictures.
 
 # Features
 
@@ -15,7 +15,7 @@ Melp is a Yelp clone. You can browse restaurants in your local area, look up inf
 [geoloc-gif]: https://raw.githubusercontent.com/bkim3395/Melp/master/app/assets/images/github%20readme%20images/geoloc.gif "Geolocation Demo"
 ![alt text][geoloc-gif]
 
-User can give their location to Geolocation API. This location will be used as the center for Google Map API in Search page. If user refuses to give their location, the default location is used for the center.
+Geolocation API can access a user's location. This location will be used as the center for Google Map API in Search page. If a user refuses to give their location, the default location is used for the center.
 
 ## Search and Google Map API
 
@@ -23,6 +23,8 @@ User can give their location to Geolocation API. This location will be used as t
 ![alt text][search-gif]
 
 User can search for restaurants in their local area. User may leave the search box blank to see all types of restuarants or filter by cuisine or name of the restaurant. In search page, all restaurants filtered by search terms and within the boundary of Google Map API are shown. The markers on the map represent the restaurants shown in the page. If the map is moved or new search term is entered, the list of restaurants will change accordingly.
+
+Below is the code responsible for fetching businesses according to search terms and map boundary.
 
 ``` ruby
     def self.bounds_search(term, bounds)
@@ -69,7 +71,7 @@ User can search for restaurants in their local area. User may leave the search b
 [business-2]: https://raw.githubusercontent.com/bkim3395/Melp/master/app/assets/images/github%20readme%20images/business_2.png "Business Page-2"
 ![alt text][business-2]
 
-In Business show page, user can browse information about the specific business they selected. It contains Google Map of business's location, its ratings, address, phone number, website link and three pictures related to the business. If user is logged in and did not review the business yet, user can press "Write a Review" button to do so. 
+In the business show page, a user can browse information about the specific business they selected. It contains Google Map of business's location, its ratings, address, phone number, link to its website and three photos related to the business. If a user is logged in and did not review the business yet, they can press "Write a Review" button to do so. 
 
 Below the section containing the business's information, there are list of reviews on that particular business. Each review contains the reviewer's name, ratings, text, and, optionally, photo if one or more photos were submitted with the review.
 
@@ -78,7 +80,7 @@ Below the section containing the business's information, there are list of revie
 [review]: https://raw.githubusercontent.com/bkim3395/Melp/master/app/assets/images/github%20readme%20images/Review%20Submission.gif "Review Submission"
 ![alt text][review]
 
-On Review submission page, the user must give ratings and review texts to successfully submit a review. Optionally, the user may submit one or more photos related to the review. If the photos exceeds 1mB, the website will warn the user and ask to submit review again with less data. If the review was successfully submitted, the user will be redirected to business show page. The ratings of the business would be calculated and updated according to the ratings given in the submitted review.
+On Review submission page, the user must give ratings and review texts to successfully submit a review. Optionally, the user may submit one or more photos related to the review. If the photos exceeds 1mB, the website will warn the user and ask them to submit the review again with less data. If the review was successfully submitted, the user will be redirected to business show page. The ratings of the business would be calculated and updated according to the ratings given in the submitted review.
 
 ## Technologies Used
 + Ruby on Rails
