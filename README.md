@@ -19,7 +19,7 @@ Geolocation API can access a user's location. This location will be used as the 
 
 ## Search and Google Map API
 
-[search-gif]: https://raw.githubusercontent.com/bkim3395/Melp/master/app/assets/images/github%20readme%20images/Search-Demo.gif "Search Demo"
+[search-gif]: https://raw.githubusercontent.com/bkim3395/Melp/master/app/assets/images/github%20readme%20images/search.gif "Search Demo"
 ![alt text][search-gif]
 
 User can search for restaurants in their local area. User may leave the search box blank to see all types of restuarants or filter by cuisine or name of the restaurant. In search page, all restaurants filtered by search terms and within the boundary of Google Map API are shown. The markers on the map represent the restaurants shown in the page. If the map is moved or new search term is entered, the list of restaurants will change accordingly.
