@@ -33,7 +33,7 @@ User can search for restaurants in their local area. User may leave the search b
             arr = term.split(" ")
         end
         new_term = arr.join(" ")
-        
+
         if(arr.length == 2 && arr[1].downcase == "food")
             cuisine = arr[0].capitalize;
             return Business.with_attached_photos.where(["cuisine iLIKE ? AND (latitude BETWEEN ? AND ?) AND (longitude BETWEEN ? AND ?)", 
@@ -62,6 +62,13 @@ User can search for restaurants in their local area. User may leave the search b
 ```
 
 ## Business Show Page
+
+[business-1]: https://raw.githubusercontent.com/bkim3395/Melp/master/app/assets/images/github%20readme%20images/Business_1.png "Business Page-1"
+![alt text][business-1]
+
+[business-2]: https://raw.githubusercontent.com/bkim3395/Melp/master/app/assets/images/github%20readme%20images/Business_2.png "Business Page-2"
+![alt text][business-2]
+
 
 
 
