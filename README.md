@@ -19,6 +19,9 @@ User can give their location to Geolocation API. This location will be used as t
 
 ## Search and Google Map API
 
+[search-gif]: https://raw.githubusercontent.com/bkim3395/Melp/master/app/assets/images/github%20readme%20images/Search-Demo.gif "Search Demo"
+![alt text][search-gif]
+
 ## Technologies Used
 + Ruby on Rails
 + PostgreSQL
