@@ -22,6 +22,49 @@ User can give their location to Geolocation API. This location will be used as t
 [search-gif]: https://raw.githubusercontent.com/bkim3395/Melp/master/app/assets/images/github%20readme%20images/Search-Demo.gif "Search Demo"
 ![alt text][search-gif]
 
+User can search for restaurants in their local area. User may leave the search box blank to see all types of restuarants or filter by cuisine or name of the restaurant. In search page, all restaurants filtered by search terms and within the boundary of Google Map API are shown. If the map is moved or new search term is entered, the list of restaurants will change accordingly.
+
+``` ruby
+    def self.bounds_search(term, bounds)
+
+        if(term.include?("%20"))
+            arr = term.split("%20")
+        else
+            arr = term.split(" ")
+        end
+        new_term = arr.join(" ")
+        
+        if(arr.length == 2 && arr[1].downcase == "food")
+            cuisine = arr[0].capitalize;
+            return Business.with_attached_photos.where(["cuisine iLIKE ? AND (latitude BETWEEN ? AND ?) AND (longitude BETWEEN ? AND ?)", 
+                                                        cuisine,
+                                                        bounds[:southWest][:lat] ,bounds[:northEast][:lat],
+                                                        bounds[:southWest][:lng] ,bounds[:northEast][:lng]])
+        elsif(new_term.downcase.include?("coffee") || new_term.downcase.include?("cafe"))
+            return Business.with_attached_photos.where(["cuisine = ? AND (latitude BETWEEN ? AND ?) AND (longitude BETWEEN ? AND ?)", 
+                                                        "Coffee",
+                                                        bounds[:southWest][:lat] ,bounds[:northEast][:lat],
+                                                        bounds[:southWest][:lng] ,bounds[:northEast][:lng]])
+        else
+            result = Business.with_attached_photos.where(["LOWER(name) LIKE ? AND (latitude BETWEEN ? AND ?) AND (longitude BETWEEN ? AND ?)",
+                                                         "%#{new_term.downcase}%",
+                                                        bounds[:southWest][:lat] ,bounds[:northEast][:lat],
+                                                        bounds[:southWest][:lng] ,bounds[:northEast][:lng]])
+            if(result.length == 0 && arr.length == 1)
+                return Business.with_attached_photos.where(["cuisine iLIKE ? AND (latitude BETWEEN ? AND ?) AND (longitude BETWEEN ? AND ?)", 
+                                                            new_term,  
+                                                            bounds[:southWest][:lat] ,bounds[:northEast][:lat],
+                                                            bounds[:southWest][:lng] ,bounds[:northEast][:lng]])
+            end
+            return result
+        end    
+    end
+```
+
+## Business Show Page
+
+
+
 ## Technologies Used
 + Ruby on Rails
 + PostgreSQL
