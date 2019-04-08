@@ -46,15 +46,15 @@ User can search for restaurants in their local area. User may leave the search b
                                                         bounds[:southWest][:lat] ,bounds[:northEast][:lat],
                                                         bounds[:southWest][:lng] ,bounds[:northEast][:lng]])
         else
-            result = Business.with_attached_photos.where(["LOWER(name) LIKE ? AND (latitude BETWEEN ? AND ?) AND (longitude BETWEEN ? AND ?)",
-                                                         "%#{new_term.downcase}%",
+            result = Business.with_attached_photos.where(["LOWER(name) LIKE ? AND (latitude BETWEEN ? AND ?) AND (longitude BETWEEN ? AND ?",
+                                                        "%#{new_term.downcase}%",
                                                         bounds[:southWest][:lat] ,bounds[:northEast][:lat],
                                                         bounds[:southWest][:lng] ,bounds[:northEast][:lng]])
             if(result.length == 0 && arr.length == 1)
-                return Business.with_attached_photos.where(["cuisine iLIKE ? AND (latitude BETWEEN ? AND ?) AND (longitude BETWEEN ? AND ?)", 
-                                                            new_term,  
-                                                            bounds[:southWest][:lat] ,bounds[:northEast][:lat],
-                                                            bounds[:southWest][:lng] ,bounds[:northEast][:lng]])
+                return Business.with_attached_photos.where(["cuisine iLIKE ? AND (latitude BETWEEN ? AND ?) AND (longitude BETWEEN ? AND ?)",
+                                                        new_term,  
+                                                        bounds[:southWest][:lat] ,bounds[:northEast][:lat],
+                                                        bounds[:southWest][:lng] ,bounds[:northEast][:lng]])
             end
             return result
         end    
@@ -66,8 +66,12 @@ User can search for restaurants in their local area. User may leave the search b
 [business-1]: https://raw.githubusercontent.com/bkim3395/Melp/master/app/assets/images/github%20readme%20images/Business_1.png "Business Page-1"
 ![alt text][business-1]
 
+In Business show page, user can browse information about the specific business they selected. It contains Google Map of business's location, its ratings, address, phone number, website link and three pictures related to the business. If user is logged in and did not review the business yet, user can press "Write a Review" button to do so. 
+
 [business-2]: https://raw.githubusercontent.com/bkim3395/Melp/master/app/assets/images/github%20readme%20images/Business_2.png "Business Page-2"
 ![alt text][business-2]
+
+Below the section containing the business's information, there are list of reviews on that particular business.
 
 
 
