@@ -22,7 +22,7 @@ User can give their location to Geolocation API. This location will be used as t
 [search-gif]: https://raw.githubusercontent.com/bkim3395/Melp/master/app/assets/images/github%20readme%20images/Search-Demo.gif "Search Demo"
 ![alt text][search-gif]
 
-User can search for restaurants in their local area. User may leave the search box blank to see all types of restuarants or filter by cuisine or name of the restaurant. In search page, all restaurants filtered by search terms and within the boundary of Google Map API are shown. If the map is moved or new search term is entered, the list of restaurants will change accordingly.
+User can search for restaurants in their local area. User may leave the search box blank to see all types of restuarants or filter by cuisine or name of the restaurant. In search page, all restaurants filtered by search terms and within the boundary of Google Map API are shown. The markers on the map represent the restaurants shown in the page. If the map is moved or new search term is entered, the list of restaurants will change accordingly.
 
 ``` ruby
     def self.bounds_search(term, bounds)
