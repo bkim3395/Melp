@@ -71,10 +71,14 @@ In Business show page, user can browse information about the specific business t
 [business-2]: https://raw.githubusercontent.com/bkim3395/Melp/master/app/assets/images/github%20readme%20images/Business_2.png "Business Page-2"
 ![alt text][business-2]
 
-Below the section containing the business's information, there are list of reviews on that particular business.
+Below the section containing the business's information, there are list of reviews on that particular business. Each review contains the reviewer's name, ratings, text, and, optionally, photo if one or more photos were submitted with the review.
 
+## Review Submission Page
 
+[review]: https://raw.githubusercontent.com/bkim3395/Melp/master/app/assets/images/github%20readme%20images/Review%20Submission.gif "Review Submission"
+![alt text][review]
 
+On Review submission page, the user must give ratings and review texts to successfully submit a review. Optionally, the user may submit one or more photos related to the review. If the photos exceeds 1mB, the website will warn the user and ask to submit review again with less data. If the review was successfully submitted, the user will be redirected to business show page. The ratings of the business would be calculated and updated according to the ratings given in the submitted review.
 
 ## Technologies Used
 + Ruby on Rails
