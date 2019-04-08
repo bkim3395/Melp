@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200" height="200" src="https://raw.githubusercontent.com/bkim3395/Melp/master/app/assets/images/new_logo.png">
+  <img width="200" height="200" src="https://raw.githubusercontent.com/bkim3395/Melp/master/app/assets/images/newnewlogo.png">
 </p>
 
 # Melp
