@@ -11,6 +11,11 @@ Melp is a Yelp clone. You can browse restaurants in your local area, look up inf
 [main-page]: https://raw.githubusercontent.com/bkim3395/Melp/master/app/assets/images/github%20readme%20images/Melp%20Frontpage.png "Main Page"
 ![alt text][main-page]
 
+# Features
+
+## Registration and Geolocation API
+
+
 
 ## Technologies Used
 + Ruby on Rails
