@@ -11,12 +11,13 @@ const msp = (state) => {
     return({
         businesses: Object.values(state.entities.businesses),
         currentUser: state.entities.users[state.session.currentUser],
+        bounds: state.ui.bounds,
     })
 }
 
 const mdp = (dispatch) => {
     return({
-        fetchBusinesses: (searchTerm) => dispatch(fetchBusinesses(searchTerm)),
+        fetchBusinesses: (searchTerm, bounds) => dispatch(fetchBusinesses(searchTerm, bounds)),
         updateBounds: (searchWords, bounds) => dispatch(updateBounds(searchWords, bounds)),
     });
 }
@@ -46,7 +47,7 @@ class Search extends React.Component{
 
     componentDidUpdate(){
         if(this.state.searchWords !== this.props.history.location.search.slice(1)){
-            this.props.fetchBusinesses(this.props.history.location.search.slice(1));
+            this.props.fetchBusinesses(this.props.history.location.search.slice(1), this.props.bounds);
             this.setState({ searchWords: this.props.history.location.search.slice(1)});
         }
     }
@@ -76,6 +77,7 @@ class Search extends React.Component{
             return <BusinessItem business={business}
                 fetchBusinesses={this.props.fetchBusinesses}
                 searchWords={searchWords}
+                bounds = {this.props.bounds}
                 key={business.id} />
         })
 
