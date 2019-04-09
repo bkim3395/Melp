@@ -76,25 +76,25 @@ div[class^="starWrapper-"]{
 
     li{
         height: 30px;
-        width: 30px;
-        margin: 0 1px;
+        width: 32px;
+        margin: 0;
 
-        input[type="radio"]{
+        button{
             opacity: 0;
             border: none;
             margin: 0;
             padding: 0;
-            width: 30px;
-            height: 30px;
+            width: 35px;
+            height: 32px;
             cursor: pointer;
         }
 
     }
 
-    li:first-child{
-        margin-left: 0px;
-        margin-right: 2px;
-    }
+    // li:first-child{
+    //     margin-left: 0px;
+    //     margin-right: 2px;
+    // }
 }
 
 

@@ -151,38 +151,38 @@ class Review extends React.Component {
         return (<>
                 <InputHeader />
             <div className="review-complete-wrapper-wrapper">
-                <div class="review-complete-wrapper">
+                <div className="review-complete-wrapper">
                 <div className="businessNameWrap">{businessLink}</div>
                 <form className="review-form" onSubmit={this.handleSubmit}>
                     <div className="review-form-input">
                         <div className="star-form">
                             <div className={starWrapper}>
                                 <li className="star">
-                                    <input type="radio" name="rating" value="1" onClick={this.handleInput("rating")}
+                                    <button type="button" value="1" onClick={this.handleInput("rating")}
                                         onMouseEnter={this.handleMouseEnter}
                                         onMouseLeave={this.handleMouseLeave}
                                     />
                                 </li>
                                 <li className="star">
-                                    <input type="radio" name="rating" value="2" onClick={this.handleInput("rating")}
+                                    <button type="button" value="2" onClick={this.handleInput("rating")}
                                         onMouseEnter={this.handleMouseEnter}
                                         onMouseLeave={this.handleMouseLeave}
                                     />
                                 </li>
                                 <li className="star">
-                                    <input type="radio" name="rating" value="3" onClick={this.handleInput("rating")}
+                                    <button type="button" value="3" onClick={this.handleInput("rating")}
                                         onMouseEnter={this.handleMouseEnter}
                                         onMouseLeave={this.handleMouseLeave}
                                     />
                                 </li>
                                 <li className="star">
-                                    <input type="radio" name="rating" value="4" onClick={this.handleInput("rating")}
+                                    <button type="button" value="4" onClick={this.handleInput("rating")}
                                         onMouseEnter={this.handleMouseEnter}
                                         onMouseLeave={this.handleMouseLeave}
                                     />
                                 </li>
                                 <li className="star">
-                                    <input type="radio" name="rating" value="5" onClick={this.handleInput("rating")}
+                                    <button type="button" value="5" onClick={this.handleInput("rating")}
                                         onMouseEnter={this.handleMouseEnter}
                                         onMouseLeave={this.handleMouseLeave}
                                     />
