@@ -147,6 +147,7 @@ class Review extends React.Component {
             to={`/business/${this.state.business_id}`}>{this.props.business.name}</Link>
         }
 
+        const placeHolderText = "Your review helps others learn about great local businesses.\n\nPlease don't review this business if you received a freebie for writing this review, or if you're connected in any way to the owner or employees."
 
         return (<>
                 <InputHeader />
@@ -193,7 +194,7 @@ class Review extends React.Component {
 
                         <label>
                             <textarea className="review-text" value={this.state.body} onChange={this.handleInput("body")}
-                                placeholder="Your review helps others learn about great local businesses.&#x0a;Please don't review this business if you received a freebie for writing this review, or if you're connected in any way to the owner or employees."
+                                placeholder= {placeHolderText}
                             ></textarea>
                         </label>
                     </div>
