@@ -25,7 +25,6 @@ export default (props) => {
             <ProtectedReviewRoute path='/business/:businessId/review'
             component={Review}
             />
-            {/* <ProtectedRoute exact path="/business/:businessId/review" component={Review} /> */}
             <Route exact path="/business/:businessId" component={Business} />
             <AuthRoute path="/signup" component={Signup} />
             <AuthRoute path="/login" component={Login} />
@@ -36,5 +35,3 @@ export default (props) => {
     
     
 }
-// currentUser={props.store.getState().session.currentUser}
-// reviews={props.store.getState().entities.reviews}

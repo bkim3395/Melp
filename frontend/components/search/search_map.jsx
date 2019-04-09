@@ -52,6 +52,3 @@ class SearchMap extends React.Component{
 }
 
 export default SearchMap;
-
-//<div ref={ map => this.mapNode = map }> 
-//react calls this cb and says the ref the dom is pointing to is now this.mapNode.

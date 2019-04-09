@@ -50,7 +50,6 @@ class Review extends React.Component {
         e.preventDefault;
         const { rating, body, author_id, business_id, photos } = this.state;
         const formData = new FormData();
-        debugger
         formData.append("review[rating]", rating);
         formData.append("review[body]", body);
         formData.append("review[author_id]", author_id);

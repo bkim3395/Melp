@@ -23,5 +23,3 @@ const mdp = (dispatch) => ({
 });
 
 export default connect(msp, mdp)(UserForm);
-
-// latitude: 40.751369, longitude: -73.983927},

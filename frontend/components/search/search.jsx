@@ -31,32 +31,12 @@ class Search extends React.Component{
         }
     }
 
-    // componentDidMount(){
-    //     const searchTerm = this.props.history.location.search.slice(1);
-    //     this.props.fetchBusinesses(searchTerm);
-    // }
-
-    // componentDidUpdate(){
-    //     if(!this.state.haveUpdatedOnce){
-    //         this.setState({
-    //             searchWords: this.props.businesses[0].cuisine,
-    //             haveUpdatedOnce: true
-    //         });
-    //     }
-    // }
-
     componentDidUpdate(){
         if(this.state.searchWords !== this.props.history.location.search.slice(1)){
             this.props.fetchBusinesses(this.props.history.location.search.slice(1), this.props.bounds);
             this.setState({ searchWords: this.props.history.location.search.slice(1)});
         }
     }
-
-    // static getDerivedStateFromProps(nextProps, prevState){
-    //     return({
-    //         searchWords: nextProps.history.location.search
-    //     })
-    // }
 
     render(){
 

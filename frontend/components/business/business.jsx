@@ -178,6 +178,3 @@ class Business extends React.Component{
 }
 
 export default connect(msp,mdp)(Business)
-
-    // < Link to = { this.business.website } >
-    //     { this.business.website }</Link >
