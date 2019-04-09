@@ -231,6 +231,10 @@
     flex-direction: column;
     justify-content: center;
     width: 500px;
+
+    p{
+        white-space: pre-wrap;
+    }
 }
 
 .review-imgs{
