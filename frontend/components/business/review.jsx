@@ -154,7 +154,7 @@ class Review extends React.Component {
             <div className="review-complete-wrapper-wrapper">
                 <div className="review-complete-wrapper">
                 <div className="businessNameWrap">{businessLink}</div>
-                <form className="review-form" onSubmit={this.handleSubmit}>
+                <form className="review-form">
                     <div className="review-form-input">
                         <div className="star-form">
                             <div className={starWrapper}>
@@ -207,7 +207,7 @@ class Review extends React.Component {
                             multiple
                         />
                     </label>
-                    <input className="review-submit" type="submit" value="Submit Your Review!" />
+                        <button type="button" className="review-submit" onClick={this.handleSubmit}>Submit Your Review!</button>
                     </div>
                 </form>
                 <ul>{errors}</ul>
