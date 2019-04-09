@@ -1,5 +1,5 @@
 json.business do
-    json.partial! "api/businesses/business", business: @business
+    json.partial! "api/businesses/business", business: @business, reviews: @reviews
 end
 
 json.review do
