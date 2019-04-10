@@ -192,11 +192,12 @@ class Review extends React.Component {
                             <div className="star-description">{starDescription}</div>
                         </div>
 
-                        <label>
+                        <label className="review-text-label">
                             <textarea className="review-text" value={this.state.body} onChange={this.handleInput("body")}
                                 placeholder= {placeHolderText}
                             ></textarea>
                         </label>
+                        <ul>{errors}</ul>
                     </div>
                     <div className="review-form-second-part">
                     <label>Submit Photos:
@@ -210,7 +211,6 @@ class Review extends React.Component {
                         <button type="button" className="review-submit" onClick={this.handleSubmit}>Submit Your Review!</button>
                     </div>
                 </form>
-                <ul>{errors}</ul>
             </div>
             </div>
         </>

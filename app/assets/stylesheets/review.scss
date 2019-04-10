@@ -13,8 +13,10 @@
     margin: 0 auto;
 
     ul{
-        padding:0;
+        margin: 0;
+        padding: 0;
         color: red;
+        margin-top: 5px;
     }
 
 }
@@ -48,11 +50,14 @@
     // margin-left: 25px;
     margin-bottom: 30px;
     width: 668px;
-    height: 382px;
+    min-height: 382px;
+    height: 80%;
     padding: 18px;
     border: 1px solid #ccc;
     border-radius: 10px;
     padding-left: 22px;
+    justify-content: space-between;
+
 }
 
 .star-form{
@@ -122,10 +127,16 @@ div[class^="starWrapper-"]{
     background-position: 0px -150px !important;
 }
 
-.review-text{
-    margin-top: 20px;
+.review-text-label{
+    min-height: 300px;
     width: 100%;
-    height: 305px;
+    height: 70%;
+}
+
+.review-text{
+    // margin-top: 20px;
+    width: 100%;
+    height: 100%;
     border: none;
     box-shadow: none;
     outline: none;
