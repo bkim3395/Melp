@@ -57,13 +57,15 @@ export const postReview = (formData) => (dispatch) => {
     )
 };
 
-export const deleteReview = (reviewId) => (dispatch) => {
+export const deleteReview = (reviewId, businessId) => (dispatch) => {
     return API_B.deleteReview(reviewId).then(
         () => {
-            return dispatch({
-                type: DELETE_REVIEW,
-                reviewId,
-            })
+            return dispatch(fetchBusiness(businessId));
         }
     )
 }
+
+    // return dispatch({
+    //     type: DELETE_REVIEW,
+    //     reviewId,
+    // })

@@ -11,7 +11,7 @@ const msp = (state) => {
 
 const mdp = (dispatch) => {
     return({
-        deleteReview: (reviewId) => dispatch(deleteReview(reviewId)),
+        deleteReview: (reviewId, businessId) => dispatch(deleteReview(reviewId, businessId)),
     })
 }
 
@@ -31,7 +31,7 @@ const review_item = ({review, user, deleteReview, currentUser}) => {
 
     if(review.author_id === currentUser){
         deleteButton = (<div className="delete_button">
-        <               button onClick={() => deleteReview(review.id)}>
+        <               button onClick={() => deleteReview(review.id, review.business_id)}>
                         <FontAwesomeIcon icon="trash-alt" /></button>
                         </div>);
     }
