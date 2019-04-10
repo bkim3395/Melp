@@ -64,8 +64,3 @@ export const deleteReview = (reviewId, businessId) => (dispatch) => {
         }
     )
 }
-
-    // return dispatch({
-    //     type: DELETE_REVIEW,
-    //     reviewId,
-    // })
