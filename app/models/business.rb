@@ -60,7 +60,7 @@ class Business < ApplicationRecord
         if(arr.length == 2 && arr[1].downcase == "food")
             cuisine = arr[0].capitalize;
             return Business.includes(:reviews).with_attached_photos.where(["cuisine iLIKE ? AND (latitude BETWEEN ? AND ?) AND (longitude BETWEEN ? AND ?)", 
-                                                        cuisine,
+                                                        "%#{cuisine.downcase}%",
                                                         bounds[:southWest][:lat] ,bounds[:northEast][:lat],
                                                         bounds[:southWest][:lng] ,bounds[:northEast][:lng]])
         elsif(new_term.downcase.include?("coffee") || new_term.downcase.include?("cafe"))
@@ -75,7 +75,7 @@ class Business < ApplicationRecord
                                                         bounds[:southWest][:lng] ,bounds[:northEast][:lng]])
             if(result.length == 0 && arr.length == 1)
                 return Business.includes(:reviews).with_attached_photos.where(["cuisine iLIKE ? AND (latitude BETWEEN ? AND ?) AND (longitude BETWEEN ? AND ?)", 
-                                                            new_term,  
+                                                            "%#{new_term.downcase}%",  
                                                             bounds[:southWest][:lat] ,bounds[:northEast][:lat],
                                                             bounds[:southWest][:lng] ,bounds[:northEast][:lng]])
             end
