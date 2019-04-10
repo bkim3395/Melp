@@ -47,9 +47,15 @@ class Search extends React.Component{
             searchWords = arr.join(" ");
         }
 
-        let bestPlace = "Places"
+        let bestPlace = "Restaurants"
         if(this.props.history.location.search){
             bestPlace = searchWords;
+        }
+
+        let bestPlaceParagraph = <><p>Best {bestPlace}</p><p> in your area!</p></>
+
+        if(this.props.businesses.length === 0){
+            bestPlaceParagraph = <><p>No Results for {bestPlace}</p><p> within your area</p></>
         }
 
 
@@ -69,7 +75,7 @@ class Search extends React.Component{
 
             <div className="search-header">
                 <div className="search-header-text">
-                    <p>Best {bestPlace}</p><p> in your area!</p>
+                    {bestPlaceParagraph}
                 </div>
             </div>
 
