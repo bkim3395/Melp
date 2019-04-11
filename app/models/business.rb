@@ -96,13 +96,13 @@ class Business < ApplicationRecord
 
         if(arr.length == 2 && arr[1].downcase == "food")
             cuisine = arr[0].capitalize;
-            return Business.includes(:reviews).with_attached_photos.where(["cuisine iLIKE ?", cuisine])
+            return Business.includes(:reviews).with_attached_photos.where(["cuisine iLIKE ?", "%#{cuisine.downcase}%"])
         elsif(new_term.downcase.include?("coffee") || new_term.downcase.include?("cafe"))
             return Business.includes(:reviews).with_attached_photos.where(["cuisine = ?", "Coffee"])
         else
             result = Business.includes(:reviews).with_attached_photos.where("LOWER(name) LIKE ?", "%#{new_term.downcase}%" )
             if(result.length == 0 && arr.length == 1)
-                return Business.includes(:reviews).with_attached_photos.where(["cuisine iLIKE ?", new_term])
+                return Business.includes(:reviews).with_attached_photos.where(["cuisine iLIKE ?", "%#{new_term.downcase}%"])
             end
             return result
         end    
