@@ -8,6 +8,18 @@
 
 Melp is a Yelp clone. User can browse restaurants in their local area, look up information about specific business and submit a review optionally with pictures.
 
+## Technologies Used
++ Ruby on Rails
++ PostgreSQL
++ JavaScript (ES6)
++ React.js and Redux
++ AWS
++ HTML and CSS
+
+## APIs
++ Google Map Javascript API
++ HTML5 Geolocation API
+
 # Features
 
 ## Registration and Geolocation API
@@ -81,16 +93,3 @@ Below the section containing the business's information, there are list of revie
 ![alt text][review]
 
 On Review submission page, the user must give ratings and review texts to successfully submit a review. Optionally, the user may submit one or more photos related to the review. If the photos exceeds 1mB, the website will warn the user and ask them to submit the review again with less data. If the review was successfully submitted, the user will be redirected to business show page. The ratings of the business would be calculated and updated according to the ratings given in the submitted review.
-
-## Technologies Used
-+ Ruby on Rails
-+ PostgreSQL
-+ JavaScript (ES6)
-+ React.js and Redux
-+ Amazon S3
-+ HTML and CSS
-
-## APIs
-+ Google Map Javascript API
-+ HTML5 Geolocation API
-
