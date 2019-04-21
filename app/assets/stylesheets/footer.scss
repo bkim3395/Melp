@@ -29,8 +29,26 @@
      padding-right: 5px;
  }
 
+ .footer-container p{
+    margin: 5px 0;
+ }
+
+ .github{
+     margin: 5px 0;
+ }
+
+ .personal-link{
+    margin-left: 12px;
+    text-decoration: none;
+    color: #0073bb;
+    cursor: pointer;
+ }
+
  .github-link{
-     margin-left: 10px;
+    margin-left: 15px;
+    text-decoration: none;
+    color: #0073bb;
+    cursor: pointer;
  }
 
  .footer-image{

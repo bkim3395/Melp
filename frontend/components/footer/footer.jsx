@@ -17,8 +17,17 @@ export default (props) => {
                 <p className="red-bold">My Contact Information:</p>
                 <br></br>
                 <p className="github">
+                <FontAwesomeIcon icon="laptop" />
+                <a className="personal-link" href="https://bkim3395.github.io/">Personal Site</a></p>
+                <p className="github">
                 <FontAwesomeIcon icon={['fab', 'github']} />
                 <a className="github-link" href="https://github.com/bkim3395">Github</a></p>
+                <p className="github">
+                <FontAwesomeIcon icon={['fab', 'linkedin']} />
+                <a className="github-link" href="https://www.linkedin.com/in/bumsoo-kim-06909b185/">LinkedIn</a></p>
+                <p className="github">
+                <FontAwesomeIcon icon={['fab', 'angellist']} />
+                <a className="github-link" href="https://angel.co/bumsoo-kim-3">AngelList</a></p>
             </div>
             <div>
                 <p className="red-bold">Credits to:</p>
