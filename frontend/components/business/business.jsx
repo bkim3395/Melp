@@ -105,7 +105,7 @@ class Business extends React.Component{
             return(<>
             <MainHeader />
             <div className="business-header">
-
+                <div className="bh-info-container">
                 <div className="bh-info">
                     <div className="bh-info-info">
                         <h1>{this.business.name}</h1>
@@ -119,10 +119,11 @@ class Business extends React.Component{
                         {reviewLink}
                     </div>
                 </div>
+                </div>
 
 
 
-
+                <div className="bh-images-container">
                 <div className="bh-images">
                     <div className="map-container">
                         <div className="businessMap">
@@ -150,6 +151,7 @@ class Business extends React.Component{
                             {businessImg}
                     </div>
                 </div>
+            </div>
             </div>
 
 

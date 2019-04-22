@@ -25,13 +25,15 @@
 
 
 .search-page{
-    width: 60%;
-    margin: 0 auto;
-    // min-width: 1000px;
-    // height: 5000px;
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
+    // margin: 0 auto;
+    // min-width: 1000px;
+    // height: 5000px;
+    // display: flex;
+    // flex-direction: row;
+    // justify-content: space-around;
     flex-wrap: nowrap;
     margin-bottom: 50px;
 }
@@ -46,8 +48,8 @@
 
 .search-map{
     position: sticky;
-    width: 350px;
-    height: 350px;
+    width: 25vw;
+    height: 25vw;
     background: transparent;
     border: 1px solid #e6e6e6;
     top: 20px;
