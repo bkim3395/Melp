@@ -6,7 +6,7 @@
 
 [Melp Live](https://melp-yelp-clone.herokuapp.com/#/)
 
-Melp is a Yelp clone. User can browse restaurants in their local area, look up information about specific business and submit a review optionally with pictures.
+Melp is a responsive single page app inspired by Yelp. User can browse restaurants in their local area, look up information about specific business and submit a review optionally with pictures.
 
 ## Technologies Used
 + Ruby on Rails
