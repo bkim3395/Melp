@@ -18,7 +18,7 @@ export default (props) => {
                 <br></br>
                 <p className="github">
                 <FontAwesomeIcon icon="laptop" />
-                <a className="personal-link" href="https://bkim3395.github.io/">Personal Site</a></p>
+                <a className="personal-link" href="http://bumsookim.net/">Personal Site</a></p>
                 <p className="github">
                 <FontAwesomeIcon icon={['fab', 'github']} />
                 <a className="github-link" href="https://github.com/bkim3395">Github</a></p>
